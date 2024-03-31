@@ -1,0 +1,62 @@
+cd /home/
+ls
+--------------------------------------------
+創建用戶
+useradd tony
+ls
+
+創建david用戶 其主文件夾為dave
+useradd -d /home/dave david
+
+passwd tony
+123456
+123456
+
+passwd david
+12345678
+12345678
+
+id atguigu
+id tony
+id david
+id dave
+--------------------------------------------
+查看所有用戶
+less /etc/passwd
+G
+--------------------------------------------
+切換用戶
+su atguigu
+cd ~
+pwd
+su tony
+123456
+ls
+
+exit // 回atguigu
+exit // 回root
+
+who am i // 創建會話的用戶<連接SSH的用戶>
+whoami   // 當前用戶
+--------------------------------------------
+刪除用戶
+userdel tony
+cd /home/
+ls
+id tony
+cat /etc/passwd
+rm -rf /home/tony/
+
+// 連主目錄一起刪
+userdel -r david
+--------------------------------------------
+終端<2>
+tony
+123456
+pwd
+--------------------------------------------
+終端<3>
+david
+12345678
+pwd
+--------------------------------------------

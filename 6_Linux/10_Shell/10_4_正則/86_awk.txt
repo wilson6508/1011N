@@ -1,0 +1,26 @@
+awk [options] '/pattern1/{action1} /pattern2/{action2}' fileName
+-F: 指定輸入文件分隔符
+-v: 賦值1個用戶定義變量
+
+whick awk
+ll /usr/bin/ | grep awk
+-------------------------------------------------------------------------------------------------------
+cat /etc/passwd | grep ^root | cut -d ":" -f 7
+cat /etc/passwd | grep ^root | cut -d ":" -f 1,6,7
+
+cat /etc/passwd | awk -F ":" '/^root/{print $7}'
+cat /etc/passwd | awk -F ":" '/^root/{print $1 "," $6 "," $7}'
+
+cat /etc/passwd | awk -F ":" '{print $1 "," $7}'
+cat /etc/passwd | awk -F ":" 'BEGIN{print "user, shell"} {print $1 "," $7} END{print "end of file"}'
+-------------------------------------------------------------------------------------------------------
+awk '{print $(NF-1),"\t",$NF}' fileName
+
+n=2
+awk -v var="$n" '{print $var}' fileName
+
+p1="$1" p2="$2"
+awk -v p1="$p1" -v p2="$p2" '{print p1 $var p2}' fileName
+-------------------------------------------------------------------------------------------------------
+輸出單row
+cat data.txt | awk -F "    " '{printf  "\x27"$1"\x27" ", "}'

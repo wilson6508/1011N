@@ -1,0 +1,10 @@
+INSERT INTO table_name 
+VALUES (5, 'bbb');
+
+INSERT INTO table_name (g_id, type_id, g_name, g_level, g_parentid)
+VALUES ('A001','DEPT','總經理室','9',' '),
+	   ('A004','DEPT','研發一組','7','A003'),
+	   ('A005','DEPT','研發二組','7','A003')
+
+update table_name set k1 = v1, k2 = v2 where condition;
+delete from table_name where condition;

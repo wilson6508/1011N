@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">123</div>
+    <div class="box">456</div>
+
+    <ul>
+        <li>test01</li>
+        <li>test02</li>
+        <li>test03</li>
+    </ul>
+
+    <script>
+        // 獲取匹配的第一個元素 沒匹配到返回null
+        // const div = document.querySelector("div");
+        // const div = document.querySelector(".box");
+        // const li = document.querySelector("ul > li");
+        // const li = document.querySelector("ul li:first-child");
+        // console.dir(div);
+
+        // 獲取多個 得到的是"偽數組" (有length 但是沒有pop push方法)
+        const lis = document.querySelectorAll("ul li");
+        for (let i = 0; i < lis.length; i++) {
+            console.dir(lis[i]);
+        }
+    </script>
+</body>
+</html>

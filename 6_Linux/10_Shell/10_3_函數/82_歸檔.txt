@@ -1,0 +1,47 @@
+vim daily_archive.sh
+-------------------------------------------------------
+if [ $# -ne 1 ]
+then
+    echo "應輸入1個參數 作為歸檔目錄名"
+    exit
+fi
+
+if [ -d $1 ]
+then
+    echo
+else
+    echo
+    echo "目錄不存在"
+    echo
+    exit
+fi
+
+DIR_NAME=$(basename $1)
+DIR_PATH=$(cd $(dirname $1); pwd)
+DATE=$(date +%y%m%d)
+FILE=archive_${DIR_NAME}_$DATE.tar.gz
+DEST=/root/archive/$FILE
+
+echo "開始歸檔..."
+echo
+
+tar -czf $DEST $DIR_PATH/$DIR_NAME
+
+if [ $? -eq 0 ]
+then
+    echo "歸檔成功 歸檔文件為: $DEST" 
+    echo
+else
+    echo "歸檔失敗"
+    echo
+fi
+
+exit
+-------------------------------------------------------
+chmod u+x daily_archive.sh
+mkdir /root/archive
+./daily_archive.sh ../scripts
+-------------------------------------------------------
+crontab -l
+crontab -e
+0 2 * * * /root/scripts/daily_archive.sh /root/scripts

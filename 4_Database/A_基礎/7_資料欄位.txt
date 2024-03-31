@@ -1,0 +1,33 @@
+create table emp(
+	id int,
+	workno varchar(10) comment '工號',
+	name varchar(10) comment '姓名',
+	gender char(1) comment '性別',
+	age tinyint unsigned comment '年齡',
+	idcard char(18) comment '身分證',
+	entrydate date comment '到職日'
+) comment '員工表';
+
+http://tw.gitbook.net/mysql/mysql_select_query.html
+---------------------------------------------------------------------------
+TINYINT (0 ~ 2^8 - 1)
+SMALLINT (-2^15 ~ 2^15 - 1)
+INT (-2^31 ~ 2^31 - 1)
+BIGINT (-2^63 ~ 2^63 - 1)
+---------------------------------------------------------------------------
+char(10) 	存'abc' > abc(3個Bytes) + 空白(7個Bytes) = (10個Bytes)
+varchar(10) 存'abc' > abc(3個Bytes) + 長度(1個Bytes mysql)
+查詢速度： char最快 > varchar次之 > text最慢。
+---------------------------------------------------------------------------
+非Unicode(沒有n): 英文字符用1Byte 來儲存 非英文字符用2Bytes來儲存
+Unicode(有n)    :                        所有文字使用2Bytes來儲存
+varchar(50)  存'中文abc'  > 7Bytes
+nvarchar(50) 存'中文abc'  > 10Bytes
+儲存的資料不限於英文，建議都以n開頭的欄位型態為主，避免亂碼。
+===========================================================================
+滿分100 小數點2位
+score double (總長度, 小數點後保留幾位)
+score double (5, 2)
+
+birthdat date
+---------------------------------------------------------------------------

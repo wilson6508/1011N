@@ -1,0 +1,24 @@
+LoadDataLocalInfile快速插入大批量數據
+https://blog.51cto.com/mouday/5293827
+
+---------------------------------------------------------------------------------------------
+
+D://test.csv
+null,Tom,18,2023-12-11 13:27:32
+null,Amy,19,2023-12-11 13:27:32
+
+cd C:\Program Files\MariaDB 10.5\bin
+mysql -uroot -p1234 -h 127.0.0.1 -P 3306 --local-infile=1
+use opv_member_dev;
+
+create table tb_user (
+	id int auto_increment primary key,
+	name varchar(10) comment '姓名',
+	age tinyint unsigned comment '年齡',
+	create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '創建時間'
+) CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci;
+
+load data local infile 'D://test.csv'
+into table tb_user
+fields terminated by ','
+lines terminated by '\n';

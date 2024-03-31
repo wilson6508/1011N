@@ -1,0 +1,30 @@
+DOMContentLoaded 與 load 事件有什麼不同?
+
+DOMContentLoaded:
+是當DOM建構完成後會觸發的事件
+因此只要當HTML文件完全載入
+解析完後就會觸發
+
+load(window.onload): 
+在HTML文件完全載入解析
+以及CSS樣式表圖片等各類資源都載入好後 才會被觸發
+load會是在DOMContentLoaded之後
+如果JavaScript會去改動到樣式圖片等
+就會更適合用load
+------------------------------------------------------------------
+beforeunload 與 unload 的觸發時機與作用分別為何?
+
+beforeunload(window.onbeforeunload):
+是在使用者要離開網頁前會被觸發 
+例如要去別頁關閉分頁等等的狀況時
+會觸發這個事件
+例如使用者要離開網頁前
+會跳出一個彈跳視窗
+詢問使用者是不是真的要離開或關閉網頁
+
+unload(window.onunload):
+則是在離開或關閉網頁後 才會被觸發
+所以它的觸發時機是在beforeunload之後
+通常會是用來埋資料分析
+因為是在使用者離開網頁時觸發
+我們就可以得知使用者確切是在什麼時機離開了網頁

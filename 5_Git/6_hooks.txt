@@ -1,0 +1,10 @@
+若是出現 hook was ignored because it's not set as executable
+代表commiter沒有執行 .git/hooks/ 的權限
+chmod ug+x .git/hooks/*
+------------------------------------------------------------------------------------------------------------
+vim .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+
+vim .git/hooks/post-commit
+chmod +x .git/hooks/post-commit
+------------------------------------------------------------------------------------------------------------

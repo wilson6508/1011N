@@ -1,0 +1,38 @@
+less /bin/unix-lpr.sh
+
+腳本格式第一行: 默認選擇的命令行解析器
+#!/bin/sh
+---------------------------------------------
+mkdir scripts
+cd scripts/
+touch hello.sh
+vim hello.sh
+
+#!/bin/bash
+echo "hello, world"
+---------------------------------------------
+第1種執行方式
+bash file
+sh file
+
+bash hello.sh
+bash ./hello.sh
+bash /root/scripts/hello.sh
+
+sh hello.sh
+sh ./hello.sh
+sh /root/scripts/hello.sh
+---------------------------------------------
+第2種執行方式
+ll /root/scripts/
+chmod +x hello.sh
+
+./hello.sh
+/root/scripts/hello.sh
+---------------------------------------------
+第3種執行方式 (不開啟子shell, 第1 2種會)
+source file
+. file
+
+type source
+---------------------------------------------

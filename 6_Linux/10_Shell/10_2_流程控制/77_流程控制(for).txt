@@ -1,0 +1,46 @@
+for ((初始值;循環控制條件;變量變化))
+do
+    echo 123
+done
+-------------------------------------------------------
+vim sum_to.sh
+#!/bin/bash
+for (( i=1; i<=$1; i++ ))
+do
+    sum=$[ $sum + $i]
+done
+echo $sum
+-------------------------------------------------------
+for 變量 in 值
+do
+    echo 123
+done
+-------------------------------------------------------
+for os in linux windows macos; do echo $os; done
+for i in { 1..100 }; do sum=$[$sum+$i]; done; echo $sum
+-------------------------------------------------------
+vim parameter_for_test.sh
+for para in $*
+do
+    echo $para
+done
+echo "==================="
+for para in $@
+do
+    echo $para
+done
+-------------------------------------------------------
+"$*" 把參數看成1個整體
+"$@" 把每個參數分別對待
+-------------------------------------------------------
+vim parameter_for_test.sh
+for para in "$*"
+do
+    echo $para
+done
+echo "==================="
+for para in "$@"
+do
+    echo $para
+done
+-------------------------------------------------------

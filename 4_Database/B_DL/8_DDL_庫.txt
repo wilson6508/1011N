@@ -1,0 +1,12 @@
+create database itcast;
+create database if not exists itcast;
+create database if not exists itheima default charset utf8mb4;
+
+drop database test;
+drop database if exists test;
+
+show databases;
+use itcast;
+select database();
+--------------------------------------------------------------------------
+目前沒有改資料庫名稱的方法

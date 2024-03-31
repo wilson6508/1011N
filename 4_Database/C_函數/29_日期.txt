@@ -1,0 +1,46 @@
+SELECT CURRENT_TIMESTAMP();
+2023-06-02 17:49:00
+
+當前日期
+CURDATE()
+select curdate();
+
+當前時間
+CURTIME()
+select curtime();
+
+當前日期和時間
+NOW()
+select now();
+
+date的年
+YEAR(date)
+select year(now());
+
+date的月
+MONTH(date)
+select month(now());
+
+date的日期
+DAY(date)
+select day(now());
+
+date加上時間間隔
+DATE_ADD(date, interval expr type)
+select date_add(now(), INTERVAL 1 second);
+select date_add(now(), INTERVAL 1 minute);
+select date_add(now(), INTERVAL 1 hour);
+select date_add(now(), INTERVAL 30 day);
+select date_add(now(), INTERVAL 30 month);
+select date_add(now(), INTERVAL 30 year);
+
+date1和date2之間的天數(date1 - date2)
+DATEDIFF(date1, date2)
+select datediff('2021-12-01', '2021-11-01');
+select datediff('2021-11-01', '2021-12-01');
+
+timediff
+select timediff(now(), date_add(now(), INTERVAL -1 minute));
+----------------------------------------------------------------------------------------------------------------
+查詢員工的入職天數 且倒序排序
+select name, datediff(curdate(), entrydate) as '入職天數' from emp order by '入職天數' desc;

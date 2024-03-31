@@ -1,0 +1,6 @@
+select * from tb_one where col_one = (select col_one from tb);
+(也可以是 insert/update/delete)
+
+where 之後
+from 之後
+select 之後

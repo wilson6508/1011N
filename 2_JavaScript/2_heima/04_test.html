@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <!-- <div style="background-color: red; width: 100px;">123</div> -->
+    <!-- <span style="background-color: red; width: 100px;">123</span> -->
+</body>
+<script>
+start: for (let i = 0; i < 5; i++) {
+    let str = '#';
+    for (let j = 0; j < 10; j++) {
+        if (j >= i) {
+            console.log(str);
+            continue start;
+        }
+        str += '#';
+    }
+}
+</script>
+</html>

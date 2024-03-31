@@ -1,0 +1,22 @@
+cd /root/scripts/
+vim parameter.sh
+chmod +x parameter.sh
+
+#!/bin/bash
+(echo "$n" 會輸出變量)
+echo '===========$n=========='
+echo script name: $0
+echo 1st parameter: $1
+echo 2nd parameter: $2
+echo '===========$#=========='
+echo parameter numbers: $#
+echo '===========$*(整體)=========='
+echo $*
+echo '===========$@(數組)=========='
+echo $@
+
+./parameter.sh abc def
+echo $?
+(return 0 正常返回)
+parameter.sh
+echo $?

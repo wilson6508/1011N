@@ -1,0 +1,20 @@
+開機 > BIOS > /boot > init process > 運行級別 > 運行級別對應服務
+
+運行級別0: 停機
+運行級別1: 單用戶root 禁止遠程登入
+運行級別2: 多用戶沒有NFS(network file system)
+運行級別3: 多用戶有NFS
+運行級別4: 系統未使用(保留)
+運行級別5: GUI模式
+運行級別6: 重啟
+
+CentOS7
+multi-user.target (運行級別3)
+graphical.target  (運行級別5)
+
+setup
+systemctl get-default
+init 3
+init 5
+
+vim /etc/inittab

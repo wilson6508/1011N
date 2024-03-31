@@ -1,0 +1,27 @@
+<div>
+    <div>ngSwitch測試</div>
+    <div>userLv = {{ userLv }}</div>
+    <input type="radio" name="ngS" [(ngModel)]="userLv" [value]="1">
+    <input type="radio" name="ngS" [(ngModel)]="userLv" [value]="2">
+    <input type="radio" name="ngS" [(ngModel)]="userLv" [value]="3">
+    <input type="radio" name="ngS" [(ngModel)]="userLv" [value]="todoActive.length">
+    <div [ngSwitch]="userLv">
+        <div *ngSwitchCase="1">顯示1</div>
+        <div *ngSwitchCase="2">顯示2</div>
+        <div *ngSwitchCase="3">顯示3</div>
+        <div *ngSwitchDefault>顯示預設</div>
+    </div>
+</div>
+
+<hr />
+
+<div>
+    <!-- https://angular.io/api/common#pipes -->
+    <!-- https://angular.io/api/common/DatePipe -->
+    <div>Pipe測試</div>
+    <div>{{ date | date: 'short' }}</div>
+    <div>{{ date | date: 'yyyy-MM-dd HH:mm:ss' }}</div>
+    <div>{{ date | date: 'yyyy年MM月dd日 HH:mm:ss' }}</div>
+    <div>{{ 'personName' | uppercase }}</div>
+    <div>{{ todoDataList | json }}</div>
+</div>

@@ -1,0 +1,14 @@
+cat /etc/passwd | awk -F ":" '{print $3}'
+cat /etc/passwd | awk -F ":" '{print $3+1}'
+cat /etc/passwd | awk -F ":" -v i=2 '{print $3+i}'
+------------------------------------------------------------------------------------
+cat /etc/passwd | awk -F ":" '{print "文件名: "FILENAME " 橫列: "NR " 直行: "NF}'
+awk -F ":" '{print "文件名: "FILENAME " 橫列: "NR " 直行: "NF}' /etc/passwd
+------------------------------------------------------------------------------------
+ifconfig | grep -n ^$
+ifconfig | awk '/^$/{print NR}'
+------------------------------------------------------------------------------------
+ifconfig ens33 | grep netmask
+ifconfig ens33 | grep netmask | cut -d " " -f 10
+ifconfig | grep netmask | cut -d " " -f 10
+ifconfig | awk '/netmask/{print $2}'

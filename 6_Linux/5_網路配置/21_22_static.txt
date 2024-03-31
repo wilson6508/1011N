@@ -1,0 +1,33 @@
+vim /etc/sysconfig/network-scripts/ifcfg-ens33
+4G
+ww
+dw
+i
+static
+ESC
+G
+IPADDR=192.168.93.100
+GATEWAY=192.168.93.2
+DNS1=192.168.93.2
+:
+wq
+
+: %s/XXX/93/g
+
+service network restart
+ping 物理機
+ping www.google.com
+-------------------------------------------------------------
+vim /etc/hostname
+hostname
+hostnamectl
+hostnamectl set-hostname hadoop100
+
+vim /etc/hosts
+C:\Windows\System32\drivers\etc
+
+192.168.93.100 hadoop100
+192.168.93.101 hadoop101
+192.168.93.102 hadoop102
+192.168.93.103 hadoop103
+192.168.93.104 hadoop104

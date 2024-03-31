@@ -1,0 +1,18 @@
+當前檔案與最新commit的差異
+git diff
+git diff main.txt
+
+git log --all --oneline
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+C:\Users\user
+編輯 .gitconfig
+[user]
+	email = Tom@example.com
+	name = Tom
+[alias]
+  l = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+git l
+
+Git GUI
+Repository > Visualize All Branch History

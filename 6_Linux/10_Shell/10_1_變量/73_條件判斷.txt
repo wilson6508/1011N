@@ -1,0 +1,48 @@
+a=hello
+
+判斷式要空格
+test $a = hello
+echo $?
+test $a = hello123
+echo $?
+--------------------------------------------------
+-eq (equal) -ne (not equal)
+-lt (less than) -le (less equal)
+-gt (greater than) -ge (greater equal)
+
+[ abcde ]
+[ $a = hello ]
+[ $a != bird ]
+[ 2 = 2 ]
+[ 2 -ne 8 ]
+
+[ ]
+[ $a = apple ]
+[ 2 = 8 ]
+[ 2 -eq 8 ]
+--------------------------------------------------
+touch test
+(read write execute)
+[ -r test ]
+[ -w test ]
+[ -x test ]
+--------------------------------------------------
+(existence file directory)
+[ -e /home/atguigu/info ]
+[ -f ./test ]
+[ -d ./test ]
+--------------------------------------------------
+$1 是不是空字串
+[ -z $1 ]
+--------------------------------------------------
+前 && 後: 前執行成功才執行後
+前 || 後: 前執行失敗才執行後
+
+[ ] && echo YES || echo NO
+
+c=15
+echo '$c'
+echo "$c"
+[ $c -lt 20 ] && echo "$c < 20" || echo "$c >= 20"
+c=27
+[ $c -lt 20 ] && echo "$c < 20" || echo "$c >= 20"

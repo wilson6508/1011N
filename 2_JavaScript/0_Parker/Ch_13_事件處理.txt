@@ -1,0 +1,65 @@
+https://hackmd.io/@WilliamLee/r1Fz92r7F
+----------------------------------------------------------------------------------------
+const timeoutID = setTimeout(() => alert('Hi, Browser!'), 1000);
+clearTimeout(timeoutID);
+
+const intervalID = setInterval(() => console.log(new Date()), 1000);
+clearInterval(intervalID);
+----------------------------------------------------------------------------------------
+<select id="select1">
+    <option>JavaScript</option>
+    <option>Java</option>
+    <option>SQL</option>
+</select>
+
+<form name="form1">
+    <label>帳號: </label>
+    <input type="text" name="username">
+    <br>
+    <label>密碼: </label>
+    <input type="password" name="password">
+    <br>
+    <input type="submit">
+</form>
+----------------------------------------------------------------------------------------
+基本事件
+
+window.onload = () => alert('Welcome!');
+const select1 = document.getElementById('select1');
+select1.onclick = () => console.log('發生[點擊]事件');
+select1.onchange = () => console.log('發生[值改變]事件');
+select1.oninput = () => console.log('發生[輸入]事件');
+select1.onfocus = () => console.log('發生[獲得焦點]事件');
+select1.onblur = () => console.log('發生[失去焦點]事件');
+document.getElementById('select1').onchange = function() {
+    console.log(this);    // <select>的代表元素
+};
+document.getElementById('select1').onchange = () => {
+    console.log(this);    // window物件
+};
+
+document.form1.onsubmit = function () {
+    const { username, password } = this;
+    alert(`帳號: ${username.value} 密碼: ${password.value}`);
+    return false;    // ← 取消預設事件行為
+};
+----------------------------------------------------------------------------------------
+標準事件
+
+window.addEventListener('load', () => alert('Welcome!'));
+const select1 = document.getElementById('select1');
+select1.addEventListener('click', () => console.log('發生[點擊]事件'));
+select1.addEventListener('change', () => console.log('發生[值改變]事件'));
+select1.addEventListener('input', () => console.log('發生[輸入]事件'));
+select1.addEventListener('focus', () => console.log('發生[獲得焦點]事件'));
+select1.addEventListener('blur', () => console.log('發生[失去焦點]事件'));
+
+document.form1.addEventListener('submit', function (event) {
+    const { username, password } = this;
+    alert(`帳號: ${username.value} 密碼: ${password.value}`);
+    event.preventDefault();    // ← 取消預設事件行為
+});
+
+
+DOM的事件傳遞機制:捕獲與冒泡
+https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/

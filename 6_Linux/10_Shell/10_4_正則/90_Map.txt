@@ -1,0 +1,30 @@
+https://www.cnblogs.com/yy3b2007com/p/11267237.html
+------------------------------------------------------
+declare -A map = (["a"]="1" ["b"]="2")
+
+declare -A map
+map["c"]="3"
+echo ${map["c"]}
+
+所有key
+echo ${!map[@]}
+所有value
+echo ${map[@]}
+長度
+echo ${#map[@]}
+
+遍歷
+for key in ${!map[@]}
+do
+    echo $key
+    echo ${map[$key]}
+done
+
+沒找到->新增 找到->刪除
+if [ ! -n "${map[$key]}" ]
+then
+    map[$key]=$value
+else
+    unset map[$key]
+fi
+------------------------------------------------------

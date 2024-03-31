@@ -1,0 +1,4 @@
+pstree
+pstree | less
+pstree -p | less
+pstree -u | less

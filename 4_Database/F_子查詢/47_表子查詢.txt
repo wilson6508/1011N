@@ -1,0 +1,7 @@
+表子查詢: 子查詢結果為表
+常用操作符: IN
+
+select * from emp where (job, salary) in (select job, salary from emp where name = 'John Doe' or name = 'Jane Smith');
+
+select * from (select * from emp where entrydate > '2023-01-01') e left join dept d on e.dept_id = d.id;
+select e.name, d.name from (select * from emp where entrydate > '2023-01-01') e left join dept d on e.dept_id = d.id;

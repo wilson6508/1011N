@@ -1,0 +1,17 @@
+select distinct workaddress as '地址' from emp;
+
+select * from emp where idcard is null;
+select * from emp where idcard is not null;
+
+like (_匹配單個字符, %匹配任意字符)
+select * from emp where name like '__';
+select * from emp where name like '___';
+select * from emp where idcard like '%5';
+
+跳脫字符
+select * from emp where name like '%\%%';
+
+<> !=
+AND &&
+OR ||
+NOT !

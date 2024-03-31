@@ -1,0 +1,29 @@
+https://www.youtube.com/watch?v=aziQ_1zWi6Q
+--------------------------------------------------------------
+列舉當前用戶所有定時任務
+crontab -l
+
+編輯定時任務
+crontab -e
+
+移除當前用戶所有定時任務
+crontab -r
+--------------------------------------------------------------------------------
+systemctl status crond
+crontab -l
+crontab -e
+
+*/1 * * * * echo "hello, world" >> /root/hello
+
+ls
+cat hello
+tail -f hello
+ctrl c
+crontab -l
+crontab -r
+crontab -l
+--------------------------------------------------------------------------------
+一般指令
+echo "hello, world" >> /home/hello/logs/$(date +%Y%m%d).log
+
+*/1 * * * * echo "hello, world" >> /home/hello/logs/$(date '+\%Y\%m\%d').log

@@ -1,0 +1,90 @@
+https://hackmd.io/@arthurc0102/Bk4UJxzs2
+=========================================
+https://git-scm.com/download/win
+64-bit Git for Windows Setup.
+=========================================
+folder 顯示其他選項
+
+git init
+檢視 > 顯示 > 隱藏的項目
+
+vim main.txt
+git status
+git add .
+
+設定身分
+git config --global user.email "Tom@example.com"
+git config --global user.name "Tom"
+
+git commit -m "Create.main.txt"
+git log
+git show
+ctrl + r
+
+git show <token>
+=========================================
+撤銷commit (安全)
+git reset --soft HEAD^
+(^ 的數量決定往前幾個)
+
+使main.txt到下方區
+git restore --staged main.txt
+
+dicard change
+git restore main.txt
+-----------------------------------------
+撤銷commit (常用)
+git reset --mixed HEAD^
+git restore main.txt
+-----------------------------------------
+撤銷commit (小心)
+git reset --hard HEAD^
+=========================================
+git branch
+git checkout <commit hash or branch>
+
+補到4個commit log
+git checkout <token>
+git checkout master
+
+b: build
+git checkout -b dog
+git checkout -b cat
+
+git log
+
+當前檔案與最新commit的差異
+git diff
+git diff main.txt
+
+git log --all
+git log --oneline
+git log --all --onelinegi
+
+Git GUI
+Repository > Visualize All Branch History
+------------------------------------------
+站在master
+
+無衝突合併
+git merge --no-ff dog
+
+有衝突合併(1)
+git merge --no-ff cat
+取消這次的合併
+git merge --abort
+
+有衝突合併(2)
+git merge --no-ff cat
+vim 解衝突
+git add .
+git merge --continue
+vim wq
+
+git checkout -b bird
+git merge bird
+
+git branch
+git branch -d dog
+git branch -d cat
+git branch -d bird

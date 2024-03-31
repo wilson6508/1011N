@@ -1,0 +1,30 @@
+建立本地分支
+git checkout -b dog
+git checkout -b cat
+git branch <branchName>
+
+查看分支
+git branch
+git branch -r
+git branch -a
+
+切換分支
+git checkout <commit hash or branch>
+git checkout 387d5e3
+git checkout master
+git checkout dog
+git checkout cat
+
+推送分支
+git push <shortName> <branchName>
+git push origin master
+git push origin cat
+
+刪除本地分支
+git branch
+git branch -d dog
+git branch -d cat
+git branch -d bird
+
+刪除遠端分支
+git push origin -d hello

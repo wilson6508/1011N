@@ -1,0 +1,17 @@
+chkconfig --list
+setup
+chkconfig network on
+chkconfig network off
+chkconfig --level 3 network on
+------------------------------------------
+systemctl status NetworkManager
+systemctl disable NetworkManager
+systemctl enable NetworkManager
+
+systemctl status firewalld
+systemctl stop firewalld
+systemctl start firewalld
+systemctl restart firewalld
+
+查看各單元是否為開機自啟動
+systemctl list-unit-files

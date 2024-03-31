@@ -1,0 +1,13 @@
+<section class="todoapp">
+  <header class="header">
+    <app-header [title]="title" [todoDataList]="todoDataList"></app-header>
+  </header>
+  <section class="main" style="display: block;">
+    <app-section [(todoDataList)]="todoDataList" [nowTodoList]="nowTodoList" [todoCompleted]="todoCompleted">
+    </app-section>
+  </section>
+  <footer class="footer" style="display: block;">
+    <app-footer (onClear)="clear()" (onStatusTypeChange)="statusTypeChange($event)" [todoActive]="todoActive" [todoCompleted]="todoCompleted" [todoDataList]="todoDataList"
+    [nowTodoStatusType]="nowTodoStatusType"></app-footer>
+  </footer>
+</section>

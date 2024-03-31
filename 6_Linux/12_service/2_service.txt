@@ -1,0 +1,62 @@
+vi /etc/systemd/system/redis.service
+
+[Unit]
+Description=redis-server
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/bin/redis-server /usr/local/src/redis-6.2.8/redis.conf
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+-----------------------------------------------------------------------------------------------------------------
+sudo vim /etc/systemd/system/DemoTest.service 
+
+[Unit]
+Description=DemoTest
+ 
+[Service]
+Restart=always
+Type=simple
+ExecStart=/usr/bin/java -Dfile.encoding=UTF-8 -Xms1024m -Xmx4096m -jar /DemoTest.jar
+ExecStop=/usr/bin/kill -15 $MAINPID
+ 
+[Install]
+WantedBy=multi-user.target
+-----------------------------------------------------------------------------------------------------------------
+vim /etc/systemd/system/service_name
+
+[Unit]
+Description=DemoTest
+
+[Service]
+Restart=always
+Type=simple
+# 記憶體用量到達40% -->有空閒的線呈就釋放 記憶體用量到達90% --> JVM降速釋放
+ExecStart=/usr/bin/java -Dfile.encoding=UTF-8  -Xms2048m -Xmx10240m -XX:+UseG1GC -XX:MinHeapFreeRatio=40 -XX:MaxHeapFreeRatio=90 -jar /DemoTest.jar
+ExecStop=/usr/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+-----------------------------------------------------------------------------------------------------------------
+vim /usr/lib/systemd/system/nginx.service
+
+[Unit]
+Descripton=nginx - web server
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/usr/local/nginx/logs/nginx.pid
+ExecStartPre=/usr/local/nginx/sbin/nginx -t -c /usr/local/nginx/conf/nginx.conf
+ExecStart=/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+ExecReload=/usr/local/nginx/sbin/nginx -s reload
+ExecStop=/usr/local/nginx/sbin/nginx -s stop
+ExecQuit=/usr/local/nginx/sbin/nginx -s quit
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+-----------------------------------------------------------------------------------------------------------------

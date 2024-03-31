@@ -1,0 +1,27 @@
+yum [選項] [參數]
+------------------------------------------------
+選項:
+-y: 所有提問皆為y
+
+參數:
+install: 安裝
+update: 更新
+check-update: 檢查是否有可用的更新
+remove: 刪除
+list: 顯示訊息
+clean: 清理緩存
+deplist: 顯示依賴關係
+------------------------------------------------
+yum list
+yum list | grep firefox
+yum remove firefox
+y
+yum list | grep firefox
+rpm -q firefox
+yum -y install firefox
+yum list | grep firefox
+rpm -q firefox
+------------------------------------------------
+更換下載鏡像的網址
+less /etc/yum.repos.d/CentOS-Base.repo
+https://www.youtube.com/watch?v=gxB5_f-p54w

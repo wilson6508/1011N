@@ -1,0 +1,10 @@
+find . -name "*.txt" | xargs rm
+
+echo 3 | xargs echo 4
+echo 3 | xargs -I {} echo {} 4
+
+echo "1 2 3 4 5 6 7 8 9 10" | xargs -n 3 echo
+The -n 3 option specifies that xargs should process three arguments at a time.
+
+尚未理解
+command1 | xargs -0 command2

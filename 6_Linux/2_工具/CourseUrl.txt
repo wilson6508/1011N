@@ -1,0 +1,22 @@
+﻿https://www.youtube.com/playlist?list=PLmOn9nNkQxJEEfgfPo0IMwu8ac5DIWYd3
+
+Bash環境下 Ctrl+A~Z
+https://blog.xuite.net/altohorn/linux/17259883
+
+Ctrl + a = 到指令開頭
+Ctrl + e = 到指令結尾
+
+Ctrl + u = 剪下至開頭
+Ctrl + k = 剪下至結尾
+
+Ctrl + l = clear
+Ctrl + c = 中斷程式執行
+
+vim消除顏色
+:nohl
+--------------------------------------------------------------------------------
+vb root 123456
+vm root atguigu
+
+Swap交換空間是什麼
+https://klab.tw/2022/06/what-is-linux-swap-and-how-to-add-it/

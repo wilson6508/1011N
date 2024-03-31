@@ -1,0 +1,24 @@
+<section class="todoapp">
+    <header class="header">
+        <h1>{{title}}</h1>
+    </header>
+    <br />
+    <section>
+        <input id="toggle-all" type="checkbox" [checked]="toggleAll" (click)="toggleAllFn()">
+        <label for="toggle-all">Mark all as complete</label>
+        <ul>
+            {{todoDataList.length}}
+            <li *ngFor="let item of todoDataList; let i=index" [class]="{smallText:item.Status}">
+                <div>
+                    <input type="checkbox" [checked]="item.Status" (click)="clickCheck(item)">
+                    <label for="">{{item.Thing}}</label>
+                    <button (click)="deleteTodo(i)">刪除{{i}}</button>
+                </div>
+            </li>         
+        </ul>
+        <input type="text" #todoInput (keyup.enter)="addTodo(todoInput)">
+        <!-- <input type="text" (keyup)="addTodo($event)"> -->
+    </section>
+</section>
+<!-- https://angular.tw/guide/built-in-directives#ngFor -->
+<!-- https://angular.tw/guide/template-reference-variables -->

@@ -1,0 +1,35 @@
+# 部門人數
+
+select d.name, (select count(*) from emp where dept_id = d.id) as 人數 from dept d;
+select d.name, count(e.id) as 人數 from dept d left join emp e on d.id = e.dept_id group by d.id;
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+# 大於平均薪資的
+
+select id, name from emp where salary > (select avg(salary) from emp);
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+# 查某部門平均薪資的
+
+select avg(salary) from emp where dept_id = (select id from dept d where d.name = '研發部');
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+# 小於部門平均薪資的
+
+select e.name, e.salary, temp.avg_salary
+from emp e
+left join (select dept_id, avg(salary) as avg_salary from emp group by dept_id) temp
+on e.dept_id = temp.dept_id
+where e.salary < temp.avg_salary;
+
+select a.name, a.salary, b.avg_salary from emp a,
+(select e.dept_id, avg(e.salary) avg_salary from emp e group by e.dept_id) b
+where a.dept_id = b.dept_id and a.salary < b.avg_salary;
+
+select temp.* from 
+(select e.name, e.salary, (select avg(salary) from emp where dept_id = e.dept_id) as avg_salary from emp e) temp
+where temp.salary < temp.avg_salary;
+
+select e.name, e.salary, (select avg(salary) from emp where dept_id = e.dept_id) as avg_salary
+from emp e
+where e.salary < (select avg(salary) from emp where dept_id = e.dept_id);
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+select d.name, e.name, s.grade from emp e, dept d, sgrade s where e.dept_id = d.id and (e.salary between s.low and s.high) and d.name = '研發部';
+-------------------------------------------------------------------------------------------------------------------------------------------------------

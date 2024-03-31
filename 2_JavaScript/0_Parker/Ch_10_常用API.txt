@@ -1,0 +1,73 @@
+https://hackmd.io/@WilliamLee/Hk3oajlGY
+------------------------------------------------------------------
+底線(underscore)分隔
+console.log(1234_5678);
+
+千分符號
+const digits = 1234567890;
+console.log(digits.toLocaleString());
+
+位數處理
+let num = 1234.5678;
+console.log(num.toFixed(3));      // 1234.568
+console.log(num.toPrecision(3));  // 1.23e+3
+
+進制
+console.log(0b11); // 3
+console.log(0o11); // 9
+console.log(0x11); // 17
+
+let num = 17;
+console.log(num.toString());      // 17 (十進位)
+console.log(num.toString(2));     // 10001 (二進位)
+console.log(num.toString(8));     // 21 (八進位)
+console.log(num.toString(16));    // 11 (十六進位)
+------------------------------------------------------------------
+整數判斷
+Number.isInteger(123);      // true
+Number.isInteger(123.456);  // false
+Number.isInteger('123');    // false
+
+字串轉數值
+Number.parseInt('12345');      // 12345
+Number.parseInt('abcde');      // NaN
+Number.parseFloat('123');      // 123
+Number.parseFloat('123.456');  // 123.456
+Number.parseFloat('abc');      // NaN
+------------------------------------------------------------------
+字串相關
+const str = 'William';
+str.charAt(0);             // W
+str.concat(' ', 'Lee');    // William Lee
+str.slice(-3);             // iam
+
+'A'.charCodeAt(0);          // 65
+'a'.charCodeAt(0);          // 97
+String.fromCharCode(97);    // 'a'
+------------------------------------------------------------------
+Math.sign(1234);       // 1
+Math.sign(-1234);      // -1
+Math.sign(0);          // 0
+
+Math.abs(1234);        // 1234
+Math.abs(-1234);       // 1234
+
+取天花板值
+Math.ceil(123.456);    // 124
+Math.ceil(-123.456);   // -123
+
+取地板值
+Math.floor(123.456);    // 123
+Math.floor(-123.456);   // -124
+
+取四捨五入
+Math.round(123.456);    // 123
+Math.round(456.789);    // 457
+
+取整數值
+Math.trunc(123.456);    // 123
+Math.trunc(456.789);    // 456
+
+Math.random()
+Math.max(5, 3, 2, 4, 1);        // 5
+Math.min(-5, -3, -2, -4, -1);   // -5

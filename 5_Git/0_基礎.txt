@@ -1,0 +1,25 @@
+https://git-scm.com/download/win
+64-bit Git for Windows Setup.
+
+安裝手順
+youtube.com/watch?v=7-bjCKaCwuk
+===========================================================
+folder 顯示其他選項
+
+git init
+檢視 > 顯示 > 隱藏的項目
+
+vim main.txt
+git status
+git add .
+
+設定身分
+git config --global user.email "Tom@example.com"
+git config --global user.name "Tom"
+去 C:\Users\user\.gitconfig 確認
+
+git commit -m "Create.main.txt"
+ctrl + r
+
+git show
+git show <commit hash>

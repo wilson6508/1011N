@@ -1,0 +1,2 @@
+https://blog.talllkai.com/Angular/Catalog
+https://angular.tw/guide/component-interaction#parent-and-children-communicate-using-a-service

@@ -1,0 +1,18 @@
+Linux 視窗
+
+super + up    // 全螢幕
+super + down  // 還原
+super + left  // 靠左
+super + right // 靠右
+
+shift + delete // 不經資源回收桶的刪除
+
+-------------------------------------
+
+centos 7
+ctrl + alt + F1      // 圖形化介面
+ctrl + alt + F2~F6   // 控制台介面
+
+ubuntu
+ctrl + alt + F7      // 圖形化介面
+ctrl + alt + F1~F6   // 控制台介面

@@ -1,0 +1,29 @@
+date
+date +%Y
+date +%m
+date +%d
+
+date +%Y-%m-%d-%H:%M:%S
+date "+%Y-%m-%d %H:%M:%S"
+
+時間戳
+date +%s
+--------------------------------------------------
+date -d "1 days ago"
+date -d "1 hours ago"
+
+date -d "-1 days ago"
+date -d "-1 hours ago"
+
+temp=-7
+date -d "$temp days ago" "+%Y-%m-%d %H:%M:%S"
+--------------------------------------------------
+cal
+cal -3
+cal -m
+cal -m -3
+cal 2021
+cal -y
+--------------------------------------------------
+date +%y%m%d 會是   230313
+date +%Y%m%d 會是 20230313

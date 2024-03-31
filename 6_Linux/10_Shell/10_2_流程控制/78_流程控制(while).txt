@@ -1,0 +1,25 @@
+while [ 條件判斷式 ]
+do
+    程序
+done
+----------------------------------------------
+vim sum_to_2.sh
+a=1
+while [ $a -le $1 ]
+do
+#    sum2=$[$sum2+$a]
+#    a=$[$a+1]
+    let sum2+=a
+    let a++
+done
+echo $sum2
+----------------------------------------------
+vim sum_to_3.sh
+while [ $1 -le $2 ]
+do
+    sum3=$[$sum3+$1]
+    $1=$[$1+1] // 這裡會有問題
+done
+echo $sum3
+----------------------------------------------
+while true;do echo test;sleep 1; done

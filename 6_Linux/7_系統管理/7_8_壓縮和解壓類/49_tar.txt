@@ -1,0 +1,37 @@
+tar [opt] fileName.tar.gz
+
+z: 壓縮
+c: 打包
+x: 解包
+v: 顯示資訊
+f: 指名
+C: 指定解壓目錄
+
+tar -zcvf temp.tar.gz info initial-setup-ks.cfg 公共/
+ls -lh
+
+tar -zxvf temp.tar.gz -C /tmp
+cd /tmp
+ls
+--------------------------------------------------------------------
+只能壓縮文件
+不保留原文件
+只能在當前資料夾下操作
+
+ls -lh
+gzip fileName
+
+ls -lh
+gunzip fileName.gz
+--------------------------------------------------------------------
+可壓縮資料夾
+保留原文件
+
+zip -r myroot.zip /root
+ls
+ls -lh
+
+unzip -d /tmp myroot.zip
+cd /tmp
+ls
+--------------------------------------------------------------------

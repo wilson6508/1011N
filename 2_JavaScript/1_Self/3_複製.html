@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        const person = { name:"Tom", age:18 };
+        const cp01 = Object.assign({}, person);
+        const cp02 = JSON.parse(JSON.stringify(person));
+        console.log(cp01);
+        console.log(cp02);
+        console.log(cp01 == cp02);
+    </script>
+</body>
+</html>

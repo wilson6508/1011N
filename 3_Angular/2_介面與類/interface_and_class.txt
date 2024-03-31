@@ -1,0 +1,57 @@
+純資料物件用interface
+有預設屬性或方法用class
+====================================================================================
+export interface Todo {
+    Status: boolean;
+    Thing: string;
+}
+------------------------------------------------------------------------------------
+import { Todo } from './@models/todo.model';
+
+clickCheck(item: Todo) {
+	item.Status = !item.Status;
+}
+
+todoDataList: Todo[] = [
+    { Status: true, Thing: '第1件事情', Editing: false },
+    { Status: true, Thing: '第2件事情', Editing: false },
+    { Status: true, Thing: '第3件事情', Editing: false }
+];
+
+addTodo(input: HTMLInputElement) {
+	const todo: Todo = {Status: true, Thing: input.value};
+	this.todoDataList.push(todo);
+	input.value = '';
+}
+====================================================================================
+export class TodoClass {
+    Status: boolean;
+    Thing: string;
+
+    constructor(_thing: string, _status: boolean = false) {
+        this.Thing = _thing;
+        this.Status = _status;
+    }
+
+    toggle() {
+        this.Status = !this.Status;
+    }
+}
+------------------------------------------------------------------------------------
+import { Todo, TodoClass } from './@models/todo.model';
+
+clickCheck(item: TodoClass) {
+	item.toggle();
+}
+
+todoDataList: TodoClass[] = [
+	{ Status: true, Thing: '第1件事情' },
+	{ Status: true, Thing: '第2件事情' },
+	{ Status: true, Thing: '第3件事情' }
+].map(data => new TodoClass(data.Thing, data.Status));
+
+addTodo(input: HTMLInputElement) {
+	this.todoDataList.push(new TodoClass(input.value));
+	input.value = '';
+}  
+====================================================================================

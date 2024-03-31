@@ -1,0 +1,10 @@
+查詢權限
+show grants for 'itcast'@'localhost';
+
+授予權限
+grant all on itcast.* to 'itcast'@'localhost';
+             (db.table)
+             (*.*)
+
+撤銷權限
+revoke all on itcast.* from 'itcast'@'localhost';

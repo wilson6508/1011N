@@ -1,0 +1,20 @@
+win8
+cd c:\Windows\System32
+
+services.msc
+------------------------------------------------
+net start mysql80
+net stop mysql80
+------------------------------------------------
+mysql -u root -p
+mysql -h 127.0.0.1 -P 3306 -u root -p
+------------------------------------------------
+分號結尾
+#
+-- 加空格
+/**/
+--------------------------------------------------------------
+DDL(Data Definition Language): 定義DB對象(數據庫, 表, 字段)
+DML(Data Manipulation Language): 對表cud
+DQL(Data Query Language): 對表r
+DCL(Data Control Language): 創建用戶 管理權限

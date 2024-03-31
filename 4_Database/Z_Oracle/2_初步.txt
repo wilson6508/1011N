@@ -1,0 +1,22 @@
+SELECT stu.SNO, stu.SNAME 
+FROM sc, STUDENT stu
+WHERE sc.SNO = STU.SNO 
+AND sc.CNO = 3 AND sc.GRADE > 90;
+-------------------------------------------------------------------
+SELECT DISTINCT c2.*
+FROM COURSE c1, COURSE c2
+where c1.CPNO = c2.CNO;
+-------------------------------------------------------------------
+SELECT stu.sno, stu.SNAME , sc.CNO , sc.GRADE 
+FROM STUDENT stu, sc 
+WHERE stu.SNO = sc.SNO;
+-------------------------------------------------------------------
+SELECT s.SNO, s.SNAME, c.CNAME, sc.GRADE 
+FROM STUDENT s, COURSE c, SC sc
+WHERE s.SNO = sc.SNO AND c.CNO = sc.CNO
+-------------------------------------------------------------------
+SELECT s.SNO, s.SNAME, c.CNAME, sc.GRADE 
+FROM STUDENT s
+INNER JOIN SC sc ON s.SNO = sc.SNO
+INNER JOIN COURSE c ON c.CNO = sc.CNO;
+-------------------------------------------------------------------

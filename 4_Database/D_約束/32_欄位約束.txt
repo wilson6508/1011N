@@ -1,0 +1,19 @@
+非空約束: NOT NULL
+唯一約束: UNIQUE
+主鍵約束: PRIMARY KEY
+默認約束: DEFAULT
+檢查約束: CHECK
+外鍵約束: FOREIGN KEY
+
+PRIMARY KEY(本身就是非空且唯一)
+---------------------------------------------------------------------------------
+https://ithelp.ithome.com.tw/articles/10226362
+https://b-l-u-e-b-e-r-r-y.github.io/post/ForeignKey/
+
+不寫                     >  可為NULL
+NOT NULL				 >  不可為NULL
+UNIQUE                   >  欄位中的資料唯一
+CHECK                    >  個欄位中的資料符合某條件 SID integer CHECK (SID > 0),
+主鑑 (Primary Key)       >  用來獨一無二地確認一個表格中的每一行資料。
+外來鑑 (Foreign Key)
+---------------------------------------------------------------------------------

@@ -1,0 +1,23 @@
+ls
+find -name info
+find ./ -name info
+find /root -name info
+
+touch 公共/info
+find -name info
+find /root/公共/ -name info
+
+find /root -name "*.cfg"
+find /home -user tony
+find /root -size +2M
+
+ls -lh
+---------------------------------
+updatedb
+locate tmp
+locate initial-setup-ks.cfg
+---------------------------------
+which ls
+which locate
+which which
+whereis locate

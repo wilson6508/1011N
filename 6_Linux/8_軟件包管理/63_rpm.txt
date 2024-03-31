@@ -1,0 +1,32 @@
+RPM: RedHat Package Manager
+----------------------------------------------------
+查詢已安裝的所有rpm軟件包
+rpm -qa
+rpm -qi
+i (information)
+
+卸載命令
+rpm -e
+
+安裝命令
+rpm -ivh
+i (install 安裝)
+v (verbose 顯示詳細訊息)
+h (hash 進度條)
+----------------------------------------------------
+rpm -qa
+rpm -qa | grep firefox
+rpm -qi firefox
+
+rpm -e firefox
+rpm -qi firefox
+
+lsblk
+cd /run/media/root/CentOS\ 7\ x86_64/
+ls
+cd Packages/
+ls
+ls | grep firefox
+rpm -ivh firefox-68.10.0-1.el7.centos.x86_64.rpm
+rpm -qi firefox
+----------------------------------------------------

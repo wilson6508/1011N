@@ -1,0 +1,16 @@
+bin(binary): 二進制可以直接執行的命令 usr/bin
+sbin(system binary): 系統管理員才能夠使用的 usr/sbin
+lib: 系統和應用程式所需要的共享庫文件 = windows.c.system32 /usr/lib
+lib64: /usr/lib64
+boot: 引導分區
+dev(device): 
+etc: 放置系統管理所需要的配置文件
+opt(option): 放置第3方軟體
+media: 可移動媒體裝置掛載點
+mnt: 移動存儲設備掛載點
+proc(process):
+run: 
+srv(service):
+sys(system): 存放硬件相關資訊
+tmp
+var(variable): 放置經常會修改的東西(log)

@@ -1,0 +1,26 @@
+kill PID
+killall processName
+
+PID1 systemd > sshd daemon > 遠程登入的進程 > 開啟bash進程
+
+ps -ef | grep sshd
+kill 1806
+
+關閉sshd守護進程 (謹慎使用)
+kill sshdDaemonPID
+無法再遠端連線到虛擬機 (只能用虛擬機 systemctl start sshd 開啟)
+
+ps -ef | grep bash
+kill -l
+9) SIGKILL // 強制停止進程
+kill -9 PID
+
+killall sshd // 連sshd守護進程都關閉 > 只能到機房操作
+---------------------------------------------------------------------------
+port被占用
+sudo lsof -i :7500
+
+COMMAND  PID  USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+process  1234 user   12u  IPv4  12345      0t0  TCP *:7500 (LISTEN)
+
+sudo kill -9 <PID>

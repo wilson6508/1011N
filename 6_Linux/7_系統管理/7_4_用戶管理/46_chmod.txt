@@ -1,0 +1,58 @@
+groupadd bigdata
+groupadd testing
+cat /etc/group
+
+useradd -g bigdata xiaoming
+useradd -g bigdata xiaoliang
+useradd -g testing xiaohong
+useradd -g testing xiaolan
+
+id xiaoming
+id xiaoliang
+id xiaohong
+id xiaolan
+ls /home/
+
+su xiaoming
+cd ~
+pwd
+vim import_code
+ll
+
+exit
+ll /home/
+chmod g+x /home/xiaoming
+chmod g+r /home/xiaoming
+ll /home/
+
+su xiaoliang
+cd ~
+cd ../xiaoming/
+ll
+cat import_code
+
+exit
+su xiaoming
+cd ~
+ll
+chmod g+w import_code
+
+exit
+su xiaoliang
+cd /home/xiaoming/
+vim import_code
+
+exit
+ll /home/
+chmod 755 /home/xiaoming
+ll /home/
+
+exit
+su xiaohong
+cd /home/xiaoming/
+cat import_code
+
+exit
+id xiaolan
+usermod -g bigdata xiaolan
+id xiaolan

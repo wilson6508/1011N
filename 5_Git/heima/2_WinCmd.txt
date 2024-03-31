@@ -1,0 +1,11 @@
+﻿clear === cls
+
+dir            列出文件跟資料夾
+mkdir demo     創建資料夾
+md packageName 創建資料夾
+rd packageName 刪除資料夾
+cd packageName 進到資料夾
+del demo.txt   刪除檔案
+ctrl+c (2次)   終止批次工作
+exit           關閉CMD
+ESC            清空整行

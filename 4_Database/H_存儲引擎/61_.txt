@@ -1,0 +1,12 @@
+show variables like 'innodb_file_per_table';
+
+C:\ProgramData\MySQL\MySQL Server 5.6\data\itheima
+ibd2sdi account.ibd
+
+https://dhc.pythonanywhere.com/article/public/1/#h3-innodb
+
+TableSpace: 表空間
+Segment: 段
+Extent: 區
+Page: 頁
+Row: 行

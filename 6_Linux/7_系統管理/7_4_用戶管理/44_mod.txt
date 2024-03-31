@@ -1,0 +1,43 @@
+-: 一般文件
+d: 資料夾
+l: link
+c: 字符類型的設備文件(滑鼠鍵盤涉及到操作字符)
+b: 涉及到硬碟的文件(block)
+--------------------------------------------------
+ll /dev/
+--------------------------------------------------
+u: user
+g: group
+o: other
+
+   u   g   o
+d rwx r-x r-x
+
+文件 (刪除文件 > 擁有該文件所在目錄的write權限)
+r: read
+w: write
+x: execute
+
+資料夾
+r: ls
+w: 創建 刪除 重命名 > 文件或資料夾
+x: cd
+--------------------------------------------------
+cp ./anaconda-ks.cfg /home/atguigu/
+cp ./initial-setup-ks.cfg /home/atguigu/
+su atguigu
+cd ~
+ll
+cat anaconda-ks.cfg
+cat initial-setup-ks.cfg
+
+ll
+ls -a 公共/
+--------------------------------------------------
+硬鏈接指向文件的inode
+該文件所有的硬鏈接被刪除 > 文件被刪除
+
+硬鏈接數: 1
+子文件夾數: 2 (. ..)
+
+權限 硬鏈接數or子文件夾數 user group size updateTime fileName

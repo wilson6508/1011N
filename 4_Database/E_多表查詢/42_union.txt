@@ -1,0 +1,8 @@
+select * from emp where salary < 4100
+union all
+select * from emp where  age < 29;
+
+去重複
+select * from emp where salary < 4100
+union
+select * from emp where  age < 29;

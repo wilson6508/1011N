@@ -1,0 +1,18 @@
+內連接: 查詢A B交集
+-----------------------------------------------------------------------
+隱式內連接:
+    select col_name from tb_one, tb_two where condition;
+
+select emp.name, dept.name from emp, dept where emp.dept_id = dept.id;
+
+起了別名後 無法再用原名 因為from是最先執行的
+select e.name, d.name from emp e, dept d where e.dept_id = d.id;
+-----------------------------------------------------------------------
+顯示內連接:
+    select col_name from tb_one [INNER] JOIN tb_two on condition;
+
+select e.name, d.name from emp e inner join dept d on e.dept_id = d.id;
+
+inner可省
+select e.name, d.name from emp e join dept d on e.dept_id = d.id;
+-----------------------------------------------------------------------

@@ -1,0 +1,21 @@
+列出資料表的相關資訊
+SHOW TABLE status FROM test_only_dev;
+https://rosalie1211.blogspot.com/2019/03/mysqlshow-table-status.html
+
+MySQL索引
+https://medium.com/@michael80402/mysql%E7%B4%A2%E5%BC%95-e002f707a5f4
+EXPLAIN SELECT * FROM notify_config WHERE id IN (327, 328);
+------------------------------------------------------------------------------------
+create index email_index on tb_user(email);
+alter table tb_user add index(email);
+alter table tb_user add primary key (Id), add index (age, gender);
+
+drop index 'primary' on tb_user;
+drop index email on tb_user;
+------------------------------------------------------------------------------------
+create index email_tel_index on tb_user(email, tel);
+alter table tb_user add index email_tel_index (email, tel); 
+
+index_2 (name, age, sex)
+index_1 (sex, name, age)
+------------------------------------------------------------------------------------

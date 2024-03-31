@@ -1,0 +1,39 @@
+搬動table
+
+RENAME TABLE stock_dev.tw_name_mapping TO stock_prod.tw_name_mapping;
+---------------------------------------------------------------------------------------------------------------------------------------
+複製table的方法
+
+1. (新建的資料表結構不完整 暫時不使用)
+CREATE TABLE new_db_name.new_table_name SELECT * FROM old_db_name.old_table_name;
+
+2.
+CREATE TABLE new_db_name.new_table_name LIKE old_db_name.old_table_name;
+INSERT new_db_name.new_table_name SELECT * FROM old_db_name.old_table_name;
+
+3.
+CREATE TABLE tw_name_mapping LIKE stock_dev.tw_name_mapping;
+INSERT tw_name_mapping SELECT * FROM stock_dev.tw_name_mapping;
+---------------------------------------------------------------------------------------------------------------------------------------
+INSERT TABLE FROM ANOTHER TABLE
+
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;
+
+insert into opv_insight.authority_sa_mapping (authority_id, service_id, action_id, value)
+select (select id from opv_insight.authority_sa where name = 'IntelligentAnalysis') as authority_id,
+       id                                                                           as service_id,
+       (select id from opv_insight.action_attribute where action = 'setting')       as action_id,
+       '1'                                                                          as value
+from opv_member.groups
+order by service_id;
+---------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO order_cus_amount 
+(order_id, cus_company_id, untaxed_amount, invoice_amount_total)
+SELECT
+order_id, cus_company_id, order_real_untaxed_amount, 0
+FROM income_statistics
+WHERE years_record = 2023
+group BY order_id;

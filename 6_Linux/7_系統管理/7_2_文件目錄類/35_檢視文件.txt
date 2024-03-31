@@ -1,0 +1,37 @@
+檢視文件
+less initial-setup-ks.cfg
+
+直接退出: q
+page up
+page down
+至底: G
+至頂: g
+
+/boot
+n: next
+N: back
+
+下一row: enter
+下一頁: 空白鍵
+往上: b
+往下: f
+-------------------------------------
+cat為catch縮寫
+
+檢視文件
+cat initial-setup-ks.cfg
+
+顯示row num
+cat -n initial-setup-ks.cfg
+-------------------------------------
+檢視文件
+more initial-setup-ks.cfg
+
+直接退出: q
+下一row: enter
+下一頁: 空白鍵
+往上: b
+往下: f
+查看目前row num: =
+查看文件名&目前row num: =
+-------------------------------------

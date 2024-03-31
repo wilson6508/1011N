@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>04_子代選擇器</title>
+    <style>
+        div > a {
+            color: red;
+        }
+        div > p > a {
+            color: skyblue;
+        }
+        .foot > a {
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">張三</a>
+        <a href="#">李四</a>
+        <a href="#">王五</a>
+        <p>
+            <a href="#">趙六</a>
+        </p>
+        <div class="foot">
+            <a href="#">孫七</a>
+        </div>
+    </div>
+</body>
+</html>

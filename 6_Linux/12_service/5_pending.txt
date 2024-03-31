@@ -1,0 +1,30 @@
+@RequestParam(value = "current", defaultValue = "1") Integer current
+
+https://vitejs.dev/guide/
+https://github.com/vuejs/create-vue
+
+callback
+serverA 發出請求(含callBackUrl)給 serverB
+serverB 先回收到給 serverA
+serverB 做完任務打callBackUrl
+
+#!/bin/sh
+#!/bin/bash
+
+sh file
+bash file
+
+$# $* $@ $?
+
+https://xenby.com/b/178-%E6%95%99%E5%AD%B8-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8gitlab-ci%E4%BE%86%E9%81%94%E5%88%B0%E8%87%AA%E5%8B%95%E5%8C%96%E6%B8%AC%E8%A9%A6%E8%88%87%E4%BD%88%E7%BD%B2
+
+
+docker run --rm -t -i -v /srv/gitlab-runner/config:/etc/gitlab-runner --name gitlab-runner gitlab/gitlab-runner register
+
+docker run -d --name gitlab-runner --restart always \
+-v /srv/gitlab-runner/config:/etc/gitlab-runner \
+-v /var/run/docker.sock:/var/run/docker.sock \
+gitlab/gitlab-runner:latest
+
+gitlab-runner register  --url https://gitlab.com  --token glrt-XFP3_YqsazBbL5HxAL7S (docker)
+gitlab-runner register  --url https://gitlab.com  --token glrt-snh6xzvKzzzTU6NwAbRs (java)

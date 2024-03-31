@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>12_偽類選擇器_否定偽類</title>
+    <style>
+        /* 選中的是div的兒子p元素，但是排除類名為fail的元素 */
+        /* div>p:not(.fail) {
+            color: red;
+        } */
+
+        /* 選中的是div的兒子p元素，但是排除title屬性值以“你要加油”開頭的 */
+        /* div>p:not([title^="你要加油"]) {
+            color: red;
+        } */
+
+        /* 選中的是div的兒子p元素，但排除第一個兒子p元素 */
+        div>p:not(:first-child) {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>張三:98分</p>
+        <p>李四:88分</p>
+        <p>王五:78分</p>
+        <p>趙六:68分</p>
+        <p class="fail" title="你要加油啊！孫七">孫七:58分</p>
+        <p class="fail" title="你要加油啊！老八">老八:48分</p>
+    </div>
+</body>
+</html>

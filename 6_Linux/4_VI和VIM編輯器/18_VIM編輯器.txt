@@ -1,0 +1,14 @@
+:w   	保存
+:q   	退出
+:wq  	保存並退出
+:q!  	不保存退出
+:noh 	no highlight
+
+:s/boot/booot 		光標當前row匹配第一個替換
+:s/boot/booot/g 	光標當前row匹配全部替換
+:%s/boot/booot 		每row匹配第一個替換
+:%s/boot/booot/g 	全匹配替換
+
+/boot
+n: next
+N: back

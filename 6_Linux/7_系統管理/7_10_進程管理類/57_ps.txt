@@ -1,0 +1,7 @@
+ps -ef | grep sshd
+
+systemctl status sshd
+
+用atguigu再開一個終端
+
+systemctl status sshd

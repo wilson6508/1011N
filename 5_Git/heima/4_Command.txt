@@ -1,0 +1,61 @@
+﻿git init
+git status
+
+git restore .          					// discard all unStagedFiles
+git restore fileName   					// discard specific unStagedFile
+git checkout -- hello.txt               // discard specific unStagedFile
+rm welcome.html                         // delete specific unStagedFile
+
+git add hello.txt          				// up to staged files
+git reset -- hello.txt                  // hello.txt down
+git add --all							
+git reset                               // all staged files down
+git rm --cached hello.txt  				// 讓hello.txt不受到git管理
+
+git commit -m "first commit"            // commit
+
+git clean -n   							// 確認哪些是會被刪除的檔案
+git clean -f   							// remove untracked files
+git clean -fd 	 						// remove untracked directorys
+
+git stash								// 暫存目前被修改的檔案
+git stash list							// 列出所有 stash 紀錄
+git stash clear							// 清空 stash list
+git stash drop stash@{n}				// 清空 stash list
+git stash pop stash@{n}					// 使用指定的暫存於當前分支, 該暫存將被從stash list中清除
+
+https://matthung0807.blogspot.com/2019/11/git-stash.html
+-----------------------------------------------------------------------
+git reflog
+git log
+git log --oneline
+
+git reset e12d8ef^ (拆掉最後一次的commit, e12d8ef最後一次的commit)
+git reset 85e7e30
+git reset --soft HEAD~1
+-----------------------------------------------------------------------
+git reset --hard 218f21c                // 穿越版本
+-----------------------------------------------------------------------
+git branch -v                           // 查看分支
+git branch hot-fix                      // 創建分支
+git checkout hot-fix                    // 移動到該分支
+git merge hot-fix                       // merge
+-----------------------------------------------------------------------
+git commit -m "merge test"				// 解完衝突的commit, 最後沒有hello.txt
+------------------------------------------------------------------------------------------
+查看遠程庫別名
+git remote
+git remote -v		
+
+先在github開repository 再將本地的git關聯遠程
+git remote add origin https://github.com/wilson6508/git-demo.git
+
+clone
+git clone https://github.com/wilson6508/git-demo.git
+
+git push origin master
+git push origin feature/wilson-beta3
+git pull origin master
+------------------------------------------------------------------------------------------
+Git 刪除已 Push 至遠端分支的 Commit 
+https://officeguide.cc/git-delete-commit-in-remote-branch-tutorial-examples/

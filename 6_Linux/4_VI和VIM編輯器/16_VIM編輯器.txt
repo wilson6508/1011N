@@ -1,0 +1,44 @@
+w: 游標跳到下1個單字
+b: 游標跳到上1個單字
+e: 游標跳到當前單字尾
+^ = 0 = home
+$: end
+gg = H = 文件開頭
+G = L = 文件結尾
+{: 上一個block
+}: 下一個block
+3G: 跳到第 3 row
+進入command mode > set nu > 11G
+				   set nonu
+
+yy: 複製游標當前row
+8yy: 複製游標以下8row
+y^: 複製游標"前1字元"到home
+y$: 複製游標到end
+yw: 複製當前單字
+
+p: 貼上
+5p: 連續貼上5次
+
+dd: 刪除游標當前row
+3dd: 刪除游標以下3row
+dw: 先到單字頂端按dw > 刪除單字
+
+x: [del] (含剪下功能)
+X: [backspace] (含剪下功能)
+
+u: undo
+ctrl + r: redo
+
+-------------
+v: 選取模式
+y: 複製
+d: 剪下
+p: 貼上
+-------------
+
+R: 改為insert
+y0: 複製游標"前1字元"到home
+
+錄製
+https://www.youtube.com/watch?v=Nav8vpUfS7A

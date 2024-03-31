@@ -1,0 +1,17 @@
+https://blog.csdn.net/weixin_42383047/article/details/107528304
+
+解決方案3
+C:\Users\wilsonhuang\AppData\Local\SourceTree
+C:\Users\wilsonhuang\AppData\Local\SourceTree\app-3.3.9
+			
+查log(sourcetree.log)
+C:\Users\wilsonhuang\AppData\Local\Atlassian\SourceTree
+
+--------------------------------------------------------------------------------------------------------------
+C:\Users\wilsonhuang\AppData\Local\Atlassian\SourceTree.exe_Url_iaqjmcar3y043gf2nlxkyic5xr0zpzz3\3.4.2.0
+刪除此資料夾中的
+Assemblies.cache
+Composition.cache
+
+[Log] - Unable to load MEF components
+--------------------------------------------------------------------------------------------------------------

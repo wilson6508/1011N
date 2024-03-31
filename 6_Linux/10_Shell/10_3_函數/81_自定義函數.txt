@@ -1,0 +1,29 @@
+[ function ] functionName[()]
+{
+    Action
+    [ return int; ]
+}
+--------------------------------------
+vim fun_test.sh
+function add(){
+    s=$[$1+$2]
+    echo "和: "$s
+}
+
+read -p "請輸入第1個整數: " first
+read -p "請輸入第2個整數: " second
+
+add $first $second
+--------------------------------------
+function add(){
+    s=$[$1+$2]
+    echo $s
+}
+
+read -p "請輸入第1個整數: " first
+read -p "請輸入第2個整數: " second
+
+sum=$(add $first $second)
+
+echo "和: "$sum
+echo "和的平方: "$[$sum*$sum]

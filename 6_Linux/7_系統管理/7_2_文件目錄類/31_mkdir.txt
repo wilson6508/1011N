@@ -1,0 +1,4 @@
+mkdir a
+mkdir b c
+mkdir d d/e d/e/f
+mkdir -p g/h/i

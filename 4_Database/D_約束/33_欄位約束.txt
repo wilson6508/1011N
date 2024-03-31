@@ -1,0 +1,24 @@
+id       唯一標示  int           主鍵且自動增長  PRIMARY KEY, AUTO_INCREMENT
+name     姓名      varchar(10)   非空且唯一     NOT NULL, UNIQUE
+age      年齡      int           >0且<=120     CHECK
+status   狀態      char(1)       默認1         DEFAULT
+gender   性別      char(1)       無
+
+create table user(
+    id int primary key auto_increment comment '主鍵',
+    name varchar(10) not null unique comment '姓名',
+    age int check ( age > 0 && age <= 120 ) comment '年齡',
+    status char(1) default '1' comment '狀態',
+    gender char(1) comment '性別'
+) comment '用戶表';
+
+
+insert into user
+(name, age, status, gender)
+values
+('Tom1', 19, '1', '男'),
+('Tom2', 25, '0', '男');
+
+insert into user(name, age, gender)
+values
+('Tom5', 110, '男');

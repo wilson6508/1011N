@@ -1,0 +1,16 @@
+查詢用戶
+use mysql;
+select * from user;
+
+創建用戶
+create user 'itcast'@'localhost' identified by '123456';
+create user 'heima'@'%' identified by '123456';
+
+修改用戶密碼
+alter user 'heima'@'%' identified with mysql_native_password by '1234'; // 8版
+
+刪除用戶
+drop user 'heima'@'%';
+
+查看當前用戶
+select user();

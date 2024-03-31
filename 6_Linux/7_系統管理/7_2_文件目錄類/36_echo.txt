@@ -1,0 +1,32 @@
+echo [option][content]
+-e: 支持反斜線控制的字符轉換
+
+echo hello,world
+echo hello world
+echo hello   world
+echo "hello   world"
+echo "hello \ world"
+echo -e "hello\nworld"
+--------------------------------------------------
+>: 覆蓋寫
+>>: 追加寫
+
+ll > info
+cat info
+ls > info
+cat info
+echo "hello, linux" >> info
+cat info
+--------------------------------------------------
+echo $<tab>
+echo $USER
+echo $PATH
+echo $HOSTNAME
+echo $HOSTNAME >> info
+--------------------------------------------------
+清空文件
+> filename
+
+在Linux中清空或刪除大檔案內容的5種方法
+https://www.796t.com/content/1541672350.html
+--------------------------------------------------

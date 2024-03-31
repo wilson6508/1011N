@@ -1,0 +1,37 @@
+<section class="todoapp">
+    <header class="header">
+        <h1>{{title}}</h1>
+    </header>
+    <br />
+    <section>
+        <input id="toggle-all" type="checkbox" [checked]="toggleAll" (click)="toggleAllFn()">
+        <label for="toggle-all">Mark all as complete</label>
+        <ul>
+            {{todoDataList.length}}
+            <li *ngFor="let item of todoDataList; let i=index" [class]="{smallText:item.Status}">
+                <div *ngIf="!item.Editing">
+                    <input [id]="'test-' + i"
+                           type="checkbox"
+                           [checked]="item.Status"
+                           (click)="clickCheck(item)" />
+                    <label [for]="'test-' + i"
+                           (dblclick)="edit(item)">
+                           {{item.Thing}}
+                    </label>
+                    <button (click)="deleteTodo(i)">
+                        刪除{{i}}
+                    </button>
+                </div>
+                <input *ngIf="item.Editing"
+                       type="text"
+                       [value]="item.Thing"
+                       #itemInput
+                       (mouseenter)="itemInput.focus()"
+                       (keyup.enter)="update(item, itemInput.value)"
+                       (blur)="update(item, itemInput.value)" />
+            </li>         
+        </ul>
+        <input type="text" #todoInput (keyup.enter)="addTodo(todoInput)">
+        <!-- <input type="text" (keyup)="addTodo($event)"> -->
+    </section>
+</section>

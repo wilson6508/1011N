@@ -1,0 +1,11 @@
+select col_name from table_name limit start_idx, query_nums;
+
+start_idx = (page - 1) * query_nums
+start_idx = 0 可以不寫
+
+# 查第一頁10條
+select * from emp limit 10;
+select * from emp limit 0, 10;
+
+# 查第二頁10條
+select * from emp limit 10, 10;

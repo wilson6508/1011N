@@ -1,0 +1,30 @@
+[Clone操作]
+右鍵 > Manage > Clone > The current state ... > Create a full clone >
+Virtual machine name:  hadoop_copy1
+Location: D:\Tools\vms\hadoop_copy1
+-----------------------------------------------------------------------------
+[改IP]
+開啟hadoop_copy1
+ifconfig
+vim /etc/sysconfig/network-scripts/ifcfg-ens33
+IPADDR改為192.168.93.101
+
+systemctl status network 
+systemctl status NetworkManager // 真正意義的網路服務
+
+以下2個命令於WORKSTATION操作(不要用putty)
+systemctl stop network
+systemctl restart NetworkManager
+ifconfig
+ping 物理機
+ping www.google.com
+-----------------------------------------------------------------------------
+[改主機名]
+cat /etc/hostname
+hostname
+hostnamectl set-hostname hadoop100
+hostname
+-----------------------------------------------------------------------------
+快照操作
+複製到別台電腦
+https://www.youtube.com/watch?v=AldO9OPGLs4

@@ -1,0 +1,21 @@
+常用的系統變量
+$HOME $PWD $SHELL $USER
+
+echo $HOME
+echo $SHELL
+ls $HOME
+
+env
+env | less
+printenv
+printenv USER
+
+ps -f
+bash
+echo $HOME
+ps -f
+exit
+
+查看當前定義的變量
+set
+set | less

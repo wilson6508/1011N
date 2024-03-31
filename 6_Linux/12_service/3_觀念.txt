@@ -1,0 +1,23 @@
+The reason you can change the name of the test.jar file in Linux 
+while the program is running but not in Windows 
+is likely due to differences in how each operating system handles open files.
+
+In Linux, a file can be opened and executed even if it is renamed or deleted, 
+as long as the file descriptor for that file is still valid. 
+This is because in Linux, a file is identified by its inode number, 
+not its name. So when you execute java -jar test.jar in Linux, 
+the operating system opens the file and creates a file descriptor for it. 
+Even if you rename or delete the file, the file descriptor remains valid and the program can continue to access the file.
+
+In Windows, on the other hand, a file cannot be renamed or deleted while it is open. 
+This is because Windows uses file handles to identify open files, which are based on the file name rather than an inode number. 
+So if you try to rename or delete test.jar while it is running in Windows, 
+the operating system will prevent it because the file handle is still open.
+
+It's worth noting that even though you can change the name of the test.jar file in Linux while it's running, 
+it's generally not a good idea to do so. 
+This can lead to confusion and unexpected behavior, 
+especially if the program tries to access the file by its original name. 
+
+It's better to stop the program first, rename the file, 
+and then restart the program with the new name.

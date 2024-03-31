@@ -1,0 +1,19 @@
+list block: 查看設備掛載情況
+lsblk
+
+ls /dev/ | grep sr0
+ll /dev/ | grep sr0
+
+顯示文件系統訊息
+lsblk -f
+
+IDE硬盤:
+SATA硬盤: 一般個人電腦 支持熱插槽 數據存儲能量大
+SCSI硬盤: 光區 掃描儀 小型計算機接口 數據傳輸快
+
+IDE: hda hdb hdc
+SATA SCSI: sda sdb sdc
+
+sda1 sda2
+abc: 表示第幾塊硬盤
+123: 表示第幾個分區

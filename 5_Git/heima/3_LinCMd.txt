@@ -1,0 +1,67 @@
+﻿cat hello.txt	// 輸出hello.txt
+vim hello.txt	// 進入hello.txt
+
+i   			// 編輯模式
+esc 			// 進入命令模式
+:q              // 離開
+
+:wq 			// to write and quit
+:q!             // to quit without saving
+
+dd  			// 刪除游標所在的那一整列
+yy  			// 複製本行
+p   			// 貼到下一行
+16p 			// 貼16行
+
+ctrl + l 			清空版面
+ctrl + u 			清空該列
+----------------------------------------------------------------------
+cd Desktop
+----------------------------------------------------------------------
+顯示當前目錄下的檔案詳細資訊
+ll
+顯示當前目錄下的檔案名
+ls
+顯示當前目錄下的隱藏檔案詳細資訊
+ll -a
+
+cd .git/
+cd ..
+----------------------------------------------------------------------
+命令提示字元 05：基本指令
+https://lnpcd.blogspot.com/2012/07/05.html
+
+How do I exit Vim?
+https://stackoverflow.com/questions/11828270/how-do-i-exit-vim
+
+ip addr
+192.168.184.128
+cd ..
+cd C:\
+cd /d D:\
+
+touch Dockerfile
+vim Dockerfile
+cat Dockerfile
+
+i         編輯
+shift + a 編輯
+esc       離開編輯
+shift + ;
+wq  // 儲存後離開
+q!  // 離開不儲存檔案。
+
+u   		// 復原前一個動作
+
+[Ctrl]+v	// 用長方形的方式選擇資料
+v   		// 將游標經過的地方反白
+V			// 將游標經過的"列"反白
+
+y	        // 將反白的地方複製起來
+p	        // 貼上剛剛複製的區塊
+
+d	        // 將反白的地方刪除掉
+
+x   		// [del]
+X   		// [backspace]
+----------------------------------------------------------------------

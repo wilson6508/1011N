@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>07_偽類選擇器_概念</title>
+    <style>
+        /* 什麽是偽類？ —— 很像類 但不是類(class) 是元素特殊狀態的一種描述 */
+        
+        /* 選中的是沒有訪問過的a元素 */
+        a:link {
+            color: orange;
+        }
+        /* 選中的是訪問過的a元素 */
+        a:visited {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.jd.com">去京東</a>
+</body>
+</html>

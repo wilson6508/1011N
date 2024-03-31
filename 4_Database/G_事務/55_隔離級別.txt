@@ -1,0 +1,10 @@
+隔離級別	                髒讀	不可重複讀	     幻讀
+Read uncommitted	        √	        √	        √
+Read committed	            ×	        √	        √
+Repeatable Read(default)	×	        ×	        √
+Serializable	            ×	        ×	        ×
+
+SELECT @@TRANSACTION_ISOLATION;
+
+SET [ SESSION | GLOBAL ] TRANSACTION ISOLATION
+LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE };

@@ -1,0 +1,13 @@
+ls /etc | grep my.cnf
+ls /etc/mysql | grep my.cnf
+
+https://cyublog.com/articles/mysql-zh/default-timezone/
+vim my.cnf
+default-time-zone='+8:00'
+systemctl restart mysqld.service
+----------------------------------------------------------------------
+SET @table_name = 'user_info';
+SET @query = CONCAT('SELECT * FROM `', @table_name, '`');
+PREPARE statement FROM @query;
+EXECUTE statement;
+DEALLOCATE PREPARE statement;

@@ -1,0 +1,48 @@
+^: 匹配一行的開頭
+cat /etc/passwd | grep ^a
+cat /etc/passwd | grep ^at
+
+$: 匹配一行的結尾
+cat /etc/passwd | grep bash$
+
+^$: 匹配空行
+cat daily_archive.sh | grep ^$
+cat daily_archive.sh | grep -n ^$
+
+.: 匹配一個任意的字符
+cat /etc/passwd | grep r.t
+cat /etc/passwd | grep r..t
+
+*: 匹配上一個字符0次或多次
+cat /etc/passwd | grep ro*t
+cat /etc/passwd | grep ^a.*bash$
+cat /etc/passwd | grep ^a.*var.*in$
+
+[]: 匹配字符區間
+[6,8]: 匹配6或者8
+[0-9]: 匹配一個0-9的數字
+[0-9]*: 匹配任意長度的數字字符串
+[a,b] 等於 [ab]
+[a-z]:
+[a-z]*:
+[a-c,e-f]:
+cat /etc/passwd | grep r[a,b]t
+echo "123rbtabcd" | grep r[a,b]t
+
+\:轉譯字符
+cat daily_archive.sh | grep $
+cat daily_archive.sh | grep '\$'
+cat daily_archive.sh | grep '/\$'
+
+其它擴展(-E 支持擴展)
+a{2}: 匹配aa
++: 匹配1次或多次
+?: 匹配1次或0次
+
+echo "13812345678" | grep ^1[34578][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$
+echo "138123456780" | grep ^1[34578][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$
+echo "13812345678" | grep ^1[34578][0-9]{9}$
+echo "13812345678" | grep -E ^1[34578][0-9]{9}$
+---------------------------------------------------------------------------------------
+以202303開頭 .log結尾
+ls | grep '^202303.*\.log$'

@@ -1,0 +1,10 @@
+select col_name from table_name order by col_one desc, col_two asc;
+
+select * from emp order by age;
+select * from emp order by age desc;
+select * from emp order by age asc, entrydate desc;
+
+SELECT * FROM tw_etf_info WHERE id IN (3, 1) ORDER BY FIELD (id, 3, 1);
+----------------------------------------------------------------------------
+SELECT TOP 100 * FROM dbo.epa_search_tds_log ORDER BY id DESC;;
+SELECT * FROM table WHERE error_code <> 0 ORDER BY id DESC LIMIT 100;

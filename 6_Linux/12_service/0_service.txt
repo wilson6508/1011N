@@ -1,0 +1,41 @@
+https://blog.csdn.net/weixin_39752599/article/details/117305269
+--------------------------------------------------------------------
+用於簡述當前服務
+[unit]
+Description
+Documentation
+After: 服務在哪些服務之後啟動
+Before:  服務在哪些服務之前啟動
+Requires: 服務啟動失敗或異常退出 Requires配置的服務也必須退出
+Wants: 服務啟動失敗或異常退出 Wants配置的服務不受影響
+--------------------------------------------------------------------
+定義如何啟動當前服務
+[service]
+
+Type=simple (默認值，ExecStart字段啟動的進程為主進程 如果啟動腳本中以 nohup & 形式啟動進程時 此時啟動腳本後會自動kill當前服務)
+Type=forking (ExecStart字段將以fork()方式啟動 此時父進程將會退出 子進程將成為主進程)
+
+EnvironmentFile: 環境參數配置文件 文件內部配置參數形式為key=value鍵值對 可以在service文件中以$key的形式引用配置項
+ExecStart: 啟動服務時執行的命令
+ExecReload: 重啟服務時執行的命令
+ExecStop: 停止服務時執行的命令
+ExecStartPre: 啟動服務之前執行的命令
+ExecStartPost: 啟動服務之後執行的命令
+ExecStopPost: 停止服務之後執行的命令
+
+停止模式
+KillMode 表示停止服務時的方式
+control-group: 默認值 當前控制組里面的所有子進程 都會被殺掉
+process: 只殺主進程
+mixed: 主進程將收到SIGTERM信號 子進程收到SIGKILL信號
+none: 沒有進程會被殺掉 只是執行服務的stop命令
+
+PrivateTmp=true 用於設置服務是否使用私有的tmp目錄
+--------------------------------------------------------------------
+定義如何安裝配置文件
+[Install]
+WantedBy=multi-user.target
+
+WantedBy: 表示服務所在的服務組
+WantedBy=multi-user.target: 表示服務屬於multi-user.target用戶組
+multi-user.target: 組里的所有服務都將開機啟動

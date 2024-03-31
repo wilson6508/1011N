@@ -1,0 +1,20 @@
+CPU  	> 大腦
+內存 	> 辦公桌
+process > 1個正在執行的程序或命令
+service > 常駐內存的process
+daemon = 守護進程 = 系統服務
+
+ls /usr/sbin/ | grep service
+service 服務名 start|stop|restart|status
+ls /etc/init.d/
+
+systemctl start|stop|restart|status 服務名
+ls /usr/lib/systemd/
+ls /usr/lib/systemd/system
+
+systemctl status network
+systemctl status NetworkManager
+
+-------------------------------------------
+systemctl stop network
+systemctl restart NetworkManager

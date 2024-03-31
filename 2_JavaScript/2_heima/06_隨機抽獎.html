@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="one"></h1>
+        <h3 id="two"></h3>
+        <h5 id="three"></h5>
+    </div>
+    <script>
+        const personArr = ["Kobe", "Melo", "LeBron", "KD", "Curry"];        
+        const idArr = ["one", "two", "three"];
+
+        for (let id of idArr) {
+            const tag = document.querySelector(`#${id}`);
+            const random = Math.floor(Math.random() * personArr.length);
+            tag.innerHTML = personArr[random];
+            personArr.splice(random, 1);
+        }
+        console.log(personArr);
+    </script>
+</body>
+</html>

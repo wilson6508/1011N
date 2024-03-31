@@ -1,0 +1,5 @@
+標量子查詢: 子查詢結果為單值
+常用操作符: = <> > >= < <=
+
+select * from emp where dept_id = (select id from dept where name = '研發部');
+select * from emp where entrydate > (select entrydate from emp where name = 'Emily Davis');

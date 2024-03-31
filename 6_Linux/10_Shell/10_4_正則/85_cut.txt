@@ -1,0 +1,30 @@
+vim cut.txt
+dong shen
+guan zhen
+wo wo
+lai lai
+le le
+---------------------------------------------------------------
+取第1行
+cut -d " " -f 1 cut.txt
+
+取第2,3行
+cut -d " " -f 2,3 cut.txt
+
+取1-4行
+cat /etc/passwd | grep bash$ | cut -d ":" -f 1-4
+
+cat /etc/passwd | grep bash$
+cat /etc/passwd | grep bash$ | cut -d ":" -f 1,6,7
+cat /etc/passwd | grep bash$ | cut -d ":" -f 4-
+cat /etc/passwd | grep bash$ | cut -d ":" -f -4
+
+echo $PATH | cut -d ":" -f 2-
+---------------------------------------------------------------
+ifconfig
+ifconfig ens33
+
+// grep 相當於提取列
+ifconfig ens33 | grep netmask
+ifconfig ens33 | grep netmask | cut -d " " -f 10
+ifconfig | grep netmask | cut -d " " -f 10

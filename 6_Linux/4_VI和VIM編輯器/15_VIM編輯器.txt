@@ -1,0 +1,13 @@
+vi fileName
+vim fileName
+
+normal mode:  (1)delete (2)copy (3)paste
+
+enter edit mode: "i"
+leave edit mode: "esc"
+
+enter command mode: "shift + ;"
+w: write
+q: quit
+u: undo
+leave command mode: "esc"

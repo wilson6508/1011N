@@ -1,0 +1,49 @@
+a=2
+echo $a
+
+my_var=hello
+my_var='hello, world'
+my_var="hello, world"
+echo $my_var
+
+env | grep my_var
+set | grep my_var
+--------------------------------------------
+ps -f
+開啟子bash
+bash
+ps -f
+echo $my_var
+exit
+--------------------------------------------
+ps -f
+echo $my_var
+聲明全局變量
+export my_var
+--------------------------------------------
+ps -f
+bash
+ps -f
+echo $my_var
+子bash修改全局變量 > 不影響父bash
+exit
+--------------------------------------------
+vim /root/scripts/hello.sh
+(添加) echo $my_var
+
+source /root/scripts/hello.sh
+. /root/scripts/hello.sh
+/root/scripts/hello.sh
+--------------------------------------------
+new_var="hello, linux"
+echo $my_var
+vim /root/scripts/hello.sh
+(添加) echo $my_var
+
+source /root/scripts/hello.sh
+. /root/scripts/hello.sh
+/root/scripts/hello.sh
+
+export new_var
+/root/scripts/hello.sh
+--------------------------------------------

@@ -1,0 +1,25 @@
+刪除文件
+rm hello
+
+強制刪除文件
+rm -f hello
+
+刪除帶有文件的資料夾
+rm -r a/
+
+強制刪除帶有文件的資料夾
+rm -rf a/
+
+刪除當前資料夾下的所有文件
+rm -r ./*
+
+rmdir a
+rmdir b c
+rmdir d/e/f d/e d/
+rmdir -p g/h/i
+-----------------------------------------------------
+不噴錯誤訊息刪除
+rm -f hello.txt
+rm hello.txt 2> /dev/null
+[ -e hello.txt ] && rm hello.txt
+-----------------------------------------------------

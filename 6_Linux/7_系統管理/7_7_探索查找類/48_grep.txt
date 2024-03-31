@@ -1,0 +1,13 @@
+-n 顯示匹配行及行號
+| 前一個命令處理的結果交由後面的命令處理
+wc word count
+
+wc info
+17  18 135 info
+17行
+18單詞
+135字節數
+
+ls | grep .cfg
+grep -n boot initial-setup-ks.cfg
+grep -n boot initial-setup-ks.cfg | wc

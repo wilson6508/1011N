@@ -1,0 +1,21 @@
+站在master
+
+無衝突合併
+git merge --no-ff dog
+
+有衝突合併(1)
+git merge --no-ff cat
+出現 (master | MERGING) 表示發生衝突
+取消這次的合併
+git merge --abort
+
+有衝突合併(2)
+git merge --no-ff cat
+vim 解衝突
+git add .
+git merge --continue
+vim wq
+
+no fast-forward
+--no-ff表示要建立一個新的節點表示為合併進來的
+沒有--no-ff節點會直接平移

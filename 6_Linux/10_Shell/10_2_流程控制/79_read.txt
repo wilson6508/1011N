@@ -1,0 +1,7 @@
+read (選項) (參數)
+-p: 提示訊息
+-t: 等待時間(秒)
+
+vim read_test.sh
+read -t 10 -p "請輸入名字: " name
+echo "welcome, $name"

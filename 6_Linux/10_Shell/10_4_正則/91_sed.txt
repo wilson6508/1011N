@@ -1,0 +1,8 @@
+sed "s|^|\ \ \ \ |g" myfile
+
+s|pattern|replacement|flags
+
+^: This is a special character that represents the beginning of a line.
+
+\ \ \ \ : These are four consecutive space characters.
+This is the replacement part, indicating that each line's beginning should be replaced with four spaces.

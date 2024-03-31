@@ -1,0 +1,5 @@
+笛卡爾積
+select * from emp, dept;
+
+消除多餘的笛卡爾積
+select * from emp, dept where emp.dept_id = dept.id;

@@ -1,0 +1,133 @@
+declare
+    var_countryname varchar2(50);
+begin
+    var_countryname := 'China';
+    dbms_output.put_line('name is' || var_countryname);
+end;
+------------------------------------------------------------------------------------------
+declare
+    v_a number := 100;
+    v_b number;
+begin
+    v_b := 30;
+    dbms_output.put_line('result is' || (v_a+v_b));
+end;
+------------------------------------------------------------------------------------------
+declare
+    var_name student.sname%type;
+    var_sdept student.sdept%type;
+begin
+    select name, sdept into var_name, var_sdept from student where sno = '201215123';
+    dbms_output.put_line('var_name is' || var_name || 'var_sdept is' || var_sdept);
+end;
+------------------------------------------------------------------------------------------
+declare
+    type stu_type is RECORD (
+        var_name student.sname%type,
+        var_sdept student.sdept%type      
+    );
+    studinfo stu_type;
+begin
+    select name, sdept into stu_type from student where sno = '201215123';
+    dbms_output.put_line('var_name is' || stu_type.var_name || 'var_sdept is' || stu_type.var_sdept);
+end;
+------------------------------------------------------------------------------------------
+declare
+    rowvar_stu student%rowtyoe;
+begin
+    select * into rowvar_stu from student where sno = '201215123';
+    dbms_output.put_line('var_name is' || rowvar_stu.var_name);
+end;
+------------------------------------------------------------------------------------------
+declare
+    a int;
+    b int;
+    c number;
+begin
+    dbms_output.put_line('enter a');
+    a := &a;
+    dbms_output.put_line('enter b');
+    b := &b;
+    c := (a+b)/(a-b);
+    dbms_output.put_line(c);
+exception
+    when zero_divide then
+    dbms_output.put_line('Divisor no zero');
+end;
+------------------------------------------------------------------------------------------
+declare
+    v_name1 varchar2(30);
+    v_name2 varchar2(30);
+begin
+    v_name1 := 'qf';
+    v_name2 := 'qfedu';
+    if length(v_name1) < length(v_name2) then
+        dbms_output.put_line(v_name2 || 'is longer then' || v_name1);
+    elsif v_grade < 70 then
+         dbms_output.put_line('XXX');
+    else
+        dbms_output.put_line(v_name2 || 'is shorter then' || v_name1);
+    end if;
+end;
+------------------------------------------------------------------------------------------
+declare
+    sum_i int := 0;
+    i int := 0;
+begin
+  loop
+    i:=i+1;
+    sum_i := sum_i + i;
+    exit when i=100;
+  end loop;
+dbms_output.put_line(sum_i);
+end;
+------------------------------------------------------------------------------------------
+declare
+    sum_i int := 0;
+    i int := 0;
+begin
+  while i<100 loop
+    i:=i+1;
+    sum_i := sum_i + i;
+  end loop;
+dbms_output.put_line(sum_i);
+end;
+------------------------------------------------------------------------------------------
+declare
+    sum_i int := 0;
+    i int := 0;
+begin
+  while i in 1..100 loop
+    sum_i := sum_i + i;
+  end loop;
+dbms_output.put_line(sum_i);
+end;
+------------------------------------------------------------------------------------------
+declare
+    season int;
+    aboutinfo varchar2(50);
+begin
+    season := &season;
+    case season
+        when 1 then
+        aboutinfo := season|| 'month 1 2 3';
+        when 2 then
+        aboutinfo := season|| 'month 4 5 6';
+    else
+        aboutinfo := 'season error'
+end case;
+end;
+------------------------------------------------------------------------------------------
+declare
+    v_result int :=1;
+begin
+    for v_result in 1..100 loop
+    if v_result = 2 then
+        goto endpoint;
+    end if
+    dbms_output.put_line(v_result);
+end loop;
+<<endpoint>>
+    dbms_output.put_line('over');
+end;
+------------------------------------------------------------------------------------------

@@ -1,0 +1,36 @@
+字串拼接
+CONCAT(s1, s2, ..., sn)
+select concat('Hello', ' Mysql');
+
+轉小寫
+LOWER(str)
+select lower('Hello');
+
+轉大寫
+UPPER(str)
+select upper('Hello');
+
+用pad對str左邊填充到n長度
+LPAD(str, n, pad)
+select lpad('abc', 5, '@');
+
+用pad對str右邊填充到n長度
+RPAD(str, n, pad)
+select rpad('abc', 5, '@');
+
+修整
+TRIM(str)
+select trim(' hello ');
+
+索引值從1開始
+SUBSTRING(str, start_idx, length)
+select substring('helloWorld', 1, 5);
+----------------------------------------------------------------------
+update emp set workno = lpad(workno, 5, '0');
+----------------------------------------------------------------------
+補充
+SELECT CHAR_LENGTH('中文'); // 2
+SELECT length('中文');      // 6
+
+char_length(): 單位為字符 不管漢字還是數字或者是字母都算是一個字符
+length(): 單位是字節 utf8編碼下 一個漢字三個字節 一個數字或字母一個字節

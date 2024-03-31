@@ -1,0 +1,11 @@
+# 有員工的部門
+
+select d.id, d.name from dept d left join emp e on d.id = e.dept_id group by d.id having count(e.id) > 0;
+
+select * from dept d where d.id in (select distinct e.dept_id from emp e where e.dept_id is not null);
+
+select distinct d.id, d.name from emp e, dept d where e.dept_id = d.id;
+---------------------------------------------------------------------------------------------------------------
+select e.name, s.id from emp e, sgrade s where e.salary >= s.low and e.salary <= s.high;
+select e.name, s.id from emp e, sgrade s where e.salary between s.low and s.high;
+---------------------------------------------------------------------------------------------------------------

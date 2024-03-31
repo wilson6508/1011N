@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS_三大特性</title>
+    <!-- 
+        繼承: 元素自動擁有其祖先元素的"某些"樣式
+        1. 可以透過MDN Referect查看是否是繼承屬性
+        2. 優先繼承離得近的
+        3. text-?? font-?? line-?? color 可以被繼承
+        4. 繼承樣式的優先級比通配選擇器還低
+    -->
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        h2 {
+            color: green;
+        }
+        div {
+            color: red;
+            font-size: 40px;
+            background-color: skyblue;
+        }
+        p {
+            color: purple;
+            background-color: inherit;
+        }
+        * {
+            color: gray;
+        }
+        /* div {} */
+        /* p {} */
+        /* span {} */
+    </style>
+</head>
+<body>
+    <h2 id="atguigu">尚矽谷</h2>
+    <hr>
+    <div>
+        我是div中的文字
+        <span>我是span中的文字1</span>
+        <span>我是span中的文字2</span>
+        <span>我是span中的文字3</span>
+        <p>
+            <span>我是span中的文字4</span>
+        </p>
+    </div>
+</body>
+</html>

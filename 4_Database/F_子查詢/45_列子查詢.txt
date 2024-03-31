@@ -1,0 +1,13 @@
+列子查詢: 子查詢結果為多列
+常用操作符: IN ANY SOME ALL NOT IN
+ANY = SOME = 任一
+
+select * from emp where dept_id in (select id from dept where name = '研發部' or name = '市場部');
+
+select * from emp where salary > all (
+    select salary from emp where dept_id in (select id from dept where name = '研發部')
+);
+
+select * from emp where salary > any (
+    select salary from emp where dept_id in (select id from dept where name = '財務部')
+);

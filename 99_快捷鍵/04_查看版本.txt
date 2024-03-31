@@ -1,0 +1,37 @@
+Linux
+cat /etc/os-release
+
+Git
+git --version
+apt install -y git
+
+Docker
+docker --version
+docker version
+
+Java
+java -version
+
+Maven
+mvn -version
+
+MySQL
+select version();
+
+Nginx
+nginx -v
+
+Gradle
+gradle -v
+
+NPM
+npm -v
+
+NodeJs
+node -v
+官網下載
+https://nodejs.org/en/download
+安裝手順
+https://www.bilibili.com/video/BV1gM411W7ex?p=5&vd_source=b87226af1536c8beb514f409a1d10b55
+NodeJs降版
+https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported?page=1&tab=scoredesc#tab-top

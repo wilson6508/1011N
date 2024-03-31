@@ -1,0 +1,20 @@
+cat /etc/group
+groupadd meifa
+cat /etc/group
+
+mod = modify
+usermod -g meifa tony
+usermod -g meifa david
+id tony
+id david
+
+groupmod -n haircut meifa
+id tony
+id david
+cat /etc/group
+
+groupdel tony
+groupdel david
+cat /etc/group
+
+vim /etc/sudoers

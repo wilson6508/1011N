@@ -1,0 +1,13 @@
+$()
+
+vim cmd_test.sh
+fileName="$1"_log_$(date +%s)
+echo $fileName
+
+basename [string] [suffix]
+basename /abc/def/ghi
+basename /abc/def/ghi.sh .sh
+
+dirname /root/scripts/parameter.sh
+dirname ../scripts/parameter.sh
+dirname ./abc/def

@@ -1,0 +1,40 @@
+create table table_name (
+    [CONSTRAINT] [外鍵名稱] FOREIGN KEY(外鍵欄位) REFERENCES 主表(主表欄位)
+);
+
+alter table table_name add constraint 外鍵名稱 FOREIGN KEY(外鍵欄位) REFERENCES 主表(主表欄位)
+
+alter table emp add constraint fk_emp_dept_id foreign key (dept_id) references dept(id);
+alter table emp drop foreign key fk_emp_dept_id;
+
+create table dept (
+    id int primary key auto_increment comment 'ID',
+    name varchar(50) not null comment '部門名稱'
+) comment '部門表';
+
+create table emp (
+    id int primary key auto_increment comment 'ID',
+    name varchar(50) not null comment '姓名',
+    age int comment '年齡',
+    job varchar(20) comment '職位',
+    salary int comment '薪水',
+    entrydate date comment '入職日',
+    managerid int comment '上司ID',
+    dept_id int comment '部門ID'
+) comment '員工表';
+
+insert into dept (id, name) values
+(1, '研發部'),
+(2, '市場部'),
+(3, '財務部'),
+(4, '銷售部'),
+(5, '總經辦');
+
+INSERT INTO emp (name, age, job, salary, entrydate, managerid, dept_id)
+VALUES
+('John Doe', 30, 'Software Engineer', 5000, '2022-01-01', 1, 1),
+('Jane Smith', 28, 'Marketing Specialist', 4000, '2021-06-15', 1, 2),
+('Michael Johnson', 35, 'Project Manager', 6000, '2020-09-10', 2, 3),
+('Sarah Lee', 32, 'Senior Developer', 5500, '2019-03-22', 2, 1),
+('David Brown', 29, 'Sales Representative', 4500, '2023-05-15', 3, 2),
+('Emily Davis', 27, 'HR Coordinator', 3800, '2022-12-01', 3, 3);

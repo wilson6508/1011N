@@ -1,0 +1,35 @@
+cd /home/atguigu/
+ll
+-------------------------------------------
+chmod [{ugoa}{+-=}{rwx}] fileOrDir
+
+chmod u+x initial-setup-ks.cfg
+ll
+chmod g+w initial-setup-ks.cfg
+ll
+chmod a=rw initial-setup-ks.cfg
+ll
+-------------------------------------------
+chmod [mode=421] fileOrDir
+r=4 w=2 x=1
+
+chmod 777 initial-setup-ks.cfg
+ll
+chmod 644 anaconda-ks.cfg
+ll
+
+修改資料夾下所有file an dir權限
+chmod -R 777 dirName/
+-------------------------------------------
+修改owner (只有root有權限)
+
+ll
+chown atguigu initial-setup-ks.cfg
+ll
+-------------------------------------------
+修改group (只有root有權限)
+
+ll
+chgrp haircut initial-setup-ks.cfg
+ll
+-------------------------------------------

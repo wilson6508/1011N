@@ -1,0 +1,13 @@
+查看CPU核心數
+https://www.cnblogs.com/Hi-blog/p/How-To-Check-CPU-And-Memory-On-CentOS7-Linux-System.html
+
+cat /proc/cpuinfo | grep processor
+cat /proc/cpuinfo | grep processor | wc -l
+cat /proc/cpuinfo | grep cores
+
+查看內存大小
+free -g
+free -h
+
+查看硬碟大小
+df -h

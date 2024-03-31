@@ -1,0 +1,6 @@
+外層應用程序 > Shell(將使用者的操作翻譯為命令 如cd ls) > Linux內核 > 硬件
+Shell同時也是編程語言
+
+cat /etc/shells
+ll /bin/ | grep bash
+echo $SHELL

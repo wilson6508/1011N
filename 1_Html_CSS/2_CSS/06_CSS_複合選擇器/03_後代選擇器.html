@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>03_後代選擇器</title>
+    <style>
+        ul li {
+            color: red;
+        }
+        ol li {
+            color: green;
+        }
+        ul li a {
+            color: orange;
+        }
+        ol li a {
+            color: gray;
+        }
+        .subject li.front-end {
+            color: blue;
+        }
+        .subject div.front-end {
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>抽煙</li>
+        <li>喝酒</li>
+        <li>
+            <a href="#">燙頭</a>
+        </li>
+    </ul>
+    <hr>
+    <ol>
+        <li>張三</li>
+        <li>李四</li>
+        <li>
+            <a href="#">王五</a>
+        </li>
+    </ol>
+    <hr>
+    <ol class="subject">
+        <li class="front-end">前端</li>
+        <div class="front-end">學科介紹：學好前端，掛帥楊帆！</div>
+        <li>Java</li>
+        <li>大數據</li>
+        <li>UI</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,15 @@
+左外連接: 左表全部 + 兩張交集
+select col_name from tb_one LEFT [OUTER] JOIN tb_two on condition;
+
+select e.*, d.name from emp e left outer join dept d on e.dept_id = d.id;
+
+outer 可省
+--------------------------------------------------------------------------------------------------
+右外連接: 右表全部 + 兩張交集
+select col_name from tb_one RIGHT [OUTER] JOIN tb_two on condition;
+
+select d.*, e.* from emp e right outer join dept d on e.dept_id = d.id;
+select d.*, e.* from emp e right outer join dept d on e.dept_id = d.id order by d.id, e.id;
+
+outer 可省
+--------------------------------------------------------------------------------------------------

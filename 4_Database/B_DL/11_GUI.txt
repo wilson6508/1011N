@@ -1,0 +1,15 @@
+All schemas
+New Schema
+
+test
+
+New Table
+user
+用戶表
+
+columns add
+id 編號
+add
+name varchar(50)
+
+Modify Table

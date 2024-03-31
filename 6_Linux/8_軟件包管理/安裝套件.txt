@@ -1,0 +1,8 @@
+Tree
+Centos 7: yum install tree -y
+Ubuntu: apt-get install tree
+--------------------------------------------------------------------------------
+Git
+Centos 7: yum install git -y
+Ubuntu: sudo apt install git
+--------------------------------------------------------------------------------

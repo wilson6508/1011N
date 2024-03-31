@@ -1,0 +1,6 @@
+fdisk只能使用root權限操作
+
+查看磁盤分區資訊
+fdisk -l
+
+reboot

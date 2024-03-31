@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>09_偽類選擇器_結構偽類_1</title>
+    <style>
+        /* 選中的是div的第一個兒子p元素(按照所有兄弟計算的) 看結構1 */
+        /* div > p:first-child {
+            color: red;
+        } */
+        /* 自我解讀: div的子元素 而且是first-child 而且是p標籤 */
+
+        /* 選中的是div的第一個兒子p元素(按照所有兄弟計算的) 看結構2 */
+        /* div > p:first-child {
+            color: red;
+        } */
+        /* 自我解讀: div的子元素 而且是first-child 而且是p標籤 */
+
+        /* 選中的是div的後代p元素，且p的父親是誰無所謂，但p必須是其父親的第一個兒子(按照所有兄弟計算的) 看結構3 */
+        /* div p:first-child {
+            color: red;
+        } */
+        /* 自我解讀: div的後代元素 而且是first-child(父親是誰無所謂) 而且是p標籤 */
+
+        /* 選中的是p元素，且p的父親是誰無所謂，但p必須是其父親的第一個兒子(按照所有兄弟計算的) 看結構3 */
+        /* p:first-child {
+            color: red;
+        } */
+        /* 自我解讀: 是first-child(父親是誰無所謂) 而且是p標籤 */
+    </style>
+</head>
+<body>
+    <!-- 結構1 -->
+    <!-- <div>
+        <p>張三: 98分</p>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>趙六: 68分</p>
+    </div> -->
+
+    <!-- 結構2 -->
+    <!-- <div>
+        <span>張三: 98分</span>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>趙六: 68分</p>
+    </div> -->
+
+    <!-- 結構3 -->
+    <!-- <p>測試1</p>
+    <div>
+        <p>測試2</p>
+        <marquee>
+            <p>測試3</p>
+            <p>張三: 98分</p>
+        </marquee>
+        <p>李四: 88分</p>
+        <p>王五: 78分</p>
+        <p>趙六: 68分</p>
+    </div> -->
+</body>
+</html>

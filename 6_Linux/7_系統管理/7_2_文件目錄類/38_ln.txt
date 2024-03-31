@@ -1,0 +1,51 @@
+ln = link
+----------------------------------------------------
+cd /home/atguigu/
+ln -s /root/info myInfo
+ll
+
+cat myInfo
+vim myInfo
+修改myInfo
+
+cd
+cat info
+----------------------------------------------------
+cd
+mkdir folder/
+touch folder/file
+ln -s /root/folder/ /home/atguigu/myFolder
+
+cd /home/atguigu
+cd myFolder/
+ls
+pwd
+pwd -P
+----------------------------------------------------
+cd /home/atguigu/myFolder
+cd -P /home/atguigu/myFolder
+----------------------------------------------------
+cd /home/atguigu/
+rm myInfo
+y
+cd
+ls
+----------------------------------------------------
+刪除myFolder這個鏈接
+rm -rf myFolder
+
+ln -s /root/folder/ /home/atguigu/myFolder
+
+刪除myFolder裡面的東西 即file
+rm -rf myFolder/
+----------------------------------------------------
+cd
+rm -rf folder
+cd /home/atguigu/myFolder
+rm /home/atguigu/myFolder
+-------------------------------------------------------------------------------------------------------------------------
+ln -s /opt/tornado/etc/nginx/sites-available/rd3-test4.conf /opt/tornado/etc/nginx/sites-enable/rd3-test4.conf
+-s: 軟鏈接
+參數1: 被鏈接的檔案或資料夾
+參數2: 捷徑
+https://skyao.gitbooks.io/learning-nginx/content/configure/vhost/action_domian.html

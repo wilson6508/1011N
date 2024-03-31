@@ -1,0 +1,12 @@
+tar -zxvf jdk-8u192-linux-x64.tar.gz -C /usr/local
+tar -zxvf apache-maven-3.9.4-bin.tar.gz -C /usr/local
+---------------------------------------------------------
+vim /etc/profile
+source /etc/profile
+java -version
+mvn -version
+---------------------------------------------------------
+vim /usr/local/apache-maven-3.9.4/conf/settings.xml
+<localRepository>/usr/local/repo</localRepository>
+
+vim /usr/local/sh/bootStart.sh

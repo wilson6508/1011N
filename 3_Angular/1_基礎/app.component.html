@@ -1,0 +1,46 @@
+<section class="todoapp">
+    <header class="header">
+        <h1>{{title}}</h1>
+        <input class="new-todo" [attr.abc]="placeholder" [placeholder]="placeholder" autofocus>
+    </header>
+    <br />
+    <section>
+        <input id="toggle-all" type="checkbox" [checked]="toggleAll" (click)="toggleAllFn()">
+        <label for="toggle-all">Mark all as complete</label>
+        <ul>
+            <li [class]="z1">
+                <div>
+                    <input type="checkbox" [checked]="c1">
+                    <label for="">111</label>
+                </div>
+            </li>
+            <li [class.smallText]="c2">
+                <div>
+                    <input type="checkbox" [checked]="c2">
+                    <label for="">222</label>
+                </div>
+            </li>
+            <li [class]="{smallText:c3}">
+                <div>
+                    <input type="checkbox" [checked]="c3">
+                    <label for="">333</label>
+                </div>
+            </li>            
+        </ul>
+    </section>
+</section>
+
+
+<!-- <button (mouseenter)="btnFn($event)">alert</button> -->
+
+<!-- <table border="1">
+    <tr>
+        <td colspan="2">3</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+</table> -->
+
+<!-- https://angular.tw/guide/class-binding -->

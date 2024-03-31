@@ -1,0 +1,56 @@
+另開終端以atguigu登入
+who am i
+who
+----------------------------
+mesg
+who -T
+mesg n
+who -T
+mesg y
+who -T
+--------------------------------------------------------------------
+write atguigu pts/1
+hello, atguigu
+test123
+--------------------------------------------------------------------
+-i: 忽略大小寫
+-m: max count
+-z: 判斷值是否為空
+
+vim send_msg.sh
+
+login_user=$(who | grep -i -m 1 $1 | awk '{print $1}')
+if [ -z $login_user ]
+then
+    echo "$1 不在線上"
+    echo "腳本退出"
+    exit
+fi
+
+is_allowed=$(who -T | grep -i -m 1 $1 | awk '{print $2}')
+if [ $is_allowed != "+" ]
+then
+    echo "$1 沒有開啟消息功能"
+    echo "腳本退出"
+    exit
+fi
+
+if [ -z $2 ]
+then
+    echo "沒有消息要放送"
+    echo "腳本退出"
+    exit
+fi
+
+whole_msg=$(echo $* | cut -d " " -f 2-)
+user_terminal=$(who | grep -i -m 1 $1 | awk '{print $2}')
+echo $whole_msg | write $login_user $user_terminal
+
+if [ $? != 0 ]
+then
+    echo "發送失敗"
+else 
+    echo "發送成功"  
+fi
+
+exit

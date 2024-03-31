@@ -1,0 +1,10 @@
+shutdown
+shutdown -c
+shutdown now
+shutdown 3
+shutdown 15:28
+-----------------------------------------
+sync 		// 將數據buffer同步到硬碟
+halt 		// 停機 關閉系統 但不斷電
+poweroff
+reboot		// 重啟 shutdown -r now 

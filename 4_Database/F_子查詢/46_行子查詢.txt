@@ -1,0 +1,5 @@
+行子查詢: 子查詢結果為多行
+常用操作符: = <> IN NOT IN
+
+select * from emp where (salary, managerid) = (4000, 1);
+select * from emp where (salary, managerid) = (select salary, managerid from emp where name = 'Jane Smith');

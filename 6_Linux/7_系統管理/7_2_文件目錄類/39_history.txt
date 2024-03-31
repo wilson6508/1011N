@@ -1,0 +1,10 @@
+history
+history 10
+!521
+
+清除歷史紀錄
+history -c
+
+以關鍵字搜尋下過的指令
+ctrl + r
+打上關鍵字後 按tab

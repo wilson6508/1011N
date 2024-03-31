@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <script>
+        const person = { name:"Tom", age:18, friend: {id: 1, price: 2} };
+        // console.log(Object.keys(person));    // ["name", "age"]
+        // console.log(Object.values(person));  // ["Tom", 18]
+        // console.log(Object.entries(person)); // [["name", "Tom"],["age", 18]]
+
+        for (const [attr, val] of Object.entries(person)) {
+        	console.log(attr, val);
+        }
+    </script>
+</body>
+</html>

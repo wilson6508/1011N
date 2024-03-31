@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>選擇器優先級_詳細聊</title>
+    <!-- !important > 行內 > (ID選擇器, 類選擇器, 元素選擇器) -->
+    <style>
+        #atguigu {
+            color: orange;
+        }
+        .container span.slogan {
+            color: red;
+        }
+        div>p>span:nth-child(1) {
+            color: green;
+        }
+        .slogan {
+            color: purple !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>
+            <span class="slogan" id="atguigu" style="color: blue;">尚矽谷，讓天下沒有難學的技術！</span>
+            <span>歡迎同學們來學習！</span>
+        </p>
+    </div>
+</body>
+</html>

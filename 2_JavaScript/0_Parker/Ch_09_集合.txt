@@ -1,0 +1,35 @@
+https://hackmd.io/@WilliamLee/rkf22WqfF
+-----------------------------------------------------------------
+const set = new Set(['a', 'b', 'b', 'c']);
+set.size;
+
+set.add(5);     // 回傳Set物件
+set.delete(5);  // 回傳boolean值
+set.has(3);     // 回傳boolean值
+set.clear();
+
+set.forEach(item => console.log(item));
+for (let item of set.values()) {
+    console.log(item);
+}
+-----------------------------------------------------------------
+const myMap = new Map();
+myMap.size;
+
+myMap.set("id", 1);  // 回傳Map物件
+myMap.delete("id");  // 回傳boolean值
+myMap.has("id");     // 回傳boolean值
+myMap.clear();
+
+myMap.forEach((val, key) => console.log(`${key}: ${val}`));
+
+for (let key of myMap.keys()) {
+    console.log(key);
+}
+for (let value of myMap.values()) {
+    console.log(value);
+}
+for (let [key, value] of myMap) {
+	console.log(key + ' = ' + value);
+}
+-----------------------------------------------------------------

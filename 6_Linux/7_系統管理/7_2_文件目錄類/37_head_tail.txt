@@ -1,0 +1,27 @@
+head fileName
+head -n 20 fileName
+tail fileName
+tail -n 5 fileName
+
+追蹤文件更新內容(相當於開啟進程)
+
+終端(1)
+tail -f info
+Ctrl + s  暫停進程
+Ctrl + q  繼續進程
+Ctrk + c  結束進程
+
+終端(2)
+echo hello >> info
+echo 1 >> info
+echo 2 >> info
+echo 3 >> info
+
+ls -i info 查看索引號
+Ctrl + k 清除光標後
+Esc  + b 左移單詞 (不能連按)
+Esc  + f 右移單詞 (不能連按)
+-------------------------------------------------------
+tail -n 3 HelloWorld.service
+cat HelloWorld.service | tail -n 4
+systemctl status HelloWorld.service | tail -n 5

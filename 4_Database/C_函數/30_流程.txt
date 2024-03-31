@@ -1,0 +1,53 @@
+若value為真 則返回t 否則返回f
+IF(value, t, f)
+select if(true, 'ok', 'error');
+
+若value1不為空 返回value1 否則返回value2
+IFNULL(value1, value2)
+select ifnull('ok', 'default');
+select ifnull('', 'default');
+select ifnull(null, 'default');
+-----------------------------------------------------------------------------------------------------------
+若expr的值為val1 返回res1 否則返回default
+CASE[expr] WHEN[val1] THEN[res1] ... ELSE[default] END
+
+上海顯示s 北京顯示b 其他顯示other
+select name,
+       (case workaddress when '北京' then 'b' when '上海' then 's' else 'other' end) as 'city'
+from emp;
+
+自我筆記
+case 欄位 when 欄位值A then 返回值A when 欄位值B then 返回值B else 返回值C end
+-----------------------------------------------------------------------------------------------------------
+若val1為真 返回res1 否則返回default
+CASE WHEN[val1] THEN[res1] ... ELSE[default] END
+
+>= 85顯示優秀
+>= 60顯示及格
+<  60顯示不及格
+
+select
+    id,
+    name,
+    (case when math >= 85 then '優秀' when math >= 60 then '及格' else '不及格' end) math,
+    (case when english >= 85 then '優秀' when english >= 60 then '及格' else '不及格' end) english,
+    (case when chinese >= 85 then '優秀' when chinese >= 60 then '及格' else '不及格' end) chinese
+from score;
+
+自我筆記
+case when 欄位值條件A then 返回值A when 欄位值條件B then 返回值B else 返回值C end
+-----------------------------------------------------------------------------------------------------------
+create table score (
+    id int comment 'ID',
+    name varchar(20) comment '姓名',
+    math int comment '數學',
+    english int comment '英文',
+    chinese int comment '國文'
+) comment '學員成績表';
+
+insert into score
+values
+(1, 'Tom', 67, 88, 95),
+(2, 'Rose', 23, 66, 90),
+(3, 'Jack', 56, 98, 76);
+-----------------------------------------------------------------------------------------------------------

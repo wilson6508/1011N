@@ -1,0 +1,32 @@
+有則覆蓋 無則創建
+cp 123.txt 456.txt
+
+複製文件
+cp file_name dir_name/
+
+複製整個資料夾過去
+cp -r dirName/ otherDirName/
+
+複製資料夾內的東西
+cp -r dirName/* otherDirName/
+------------------------------------------------------------------------
+type cp (cp is aliased to `cp -i')
+使用cp原生命令 \cp
+cp --help
+alias
+------------------------------------------------------------------------
+複製文件
+cp 文件 /home/atguigu/
+cp 文件 ../home/atguigu/
+複製資料夾
+mkdir a
+cp 文件 a/
+cp -r a/ /home/atguigu/
+------------------------------------------------------------------------
+覆蓋文件
+cp hello2 /home/atguigu/hello2
+y
+vim /home/atguigu/hello2
+直接覆蓋
+\cp hello2 /home/atguigu/hello2
+------------------------------------------------------------------------

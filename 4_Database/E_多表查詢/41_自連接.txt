@@ -1,0 +1,8 @@
+自連接: 須使用表別名 (可以是內連接or外連接)
+select col_name from 表A 別名A JOIN 表A 別名B on condition;
+
+內連接
+select a.name, b.name from emp a, emp b where a.managerid = b.id;
+
+外連接
+select a.name '員工', b.name '老闆' from emp a left join emp b on a.managerid = b.id;

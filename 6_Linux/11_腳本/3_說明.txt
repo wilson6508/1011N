@@ -1,0 +1,38 @@
+nohup java -jar demo-0.0.1-SNAPSHOT.jar &> hellojava.log &
+nohup java -jar demo-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &
+
+&: 後台運行
+
+&>: 將標準輸出(stdout)和標準錯誤(stderr)重定向到名為hellojava.log
+
+2>&1：重定向到與標準輸出相同的位置(確保stdout和stderr都重定向到/dev/null)
+----------------------------------------------------------------------------------------------------------------------
+D:\RD3\EPA\Auth-Server\build\libs
+/opt/mariadb/apps/rd3/auth/onlytest.sh
+
+sudo rm /opt/mariadb/apps/rd3/auth/AuthServer.jar
+sudo mv /home/rd3/AuthServer.jar /opt/mariadb/apps/rd3/auth/
+sudo systemctl restart AuthServer.service
+
+sudo systemctl status AuthServer.service
+----------------------------------------------------------------------------------------------------------------------
+sudo vim /etc/systemd/system/AuthServer.service
+sudo systemctl stop AuthServer.service
+----------------------------------------------------------------------------------------------------------------------
+[Unit]
+Description=AuthServer
+ 
+[Service]
+Restart=always
+Type=simple
+ExecStart=/usr/bin/java -Dfile.encoding=UTF-8 -Xms1024m -Xmx4096m -jar /opt/mariadb/apps/rd3/auth/AuthServer.jar
+ExecStop=/usr/bin/kill -15 $MAINPID
+ 
+[Install]
+WantedBy=multi-user.target
+----------------------------------------------------------------------------------------------------------------------
+sudo rm -r /opt/mariadb/apps/rd3/authfront/*
+sudo mv /home/rd3/* /opt/mariadb/apps/rd3/authfront/
+
+sudo vim /etc/nginx/conf.d/auth.conf
+sudo systemctl restart nginx.service

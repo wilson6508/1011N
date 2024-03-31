@@ -1,0 +1,18 @@
+/etc/systemd/system/
+/usr/lib/systemd/system/
+--------------------------------------------------------------------------
+sudo systemctl daemon-reload // 修改.service文件後重新加載文件
+
+sudo systemctl list-units --type=service
+sudo systemctl status DemoTest.service
+
+sudo systemctl start DemoTest.service
+sudo systemctl stop DemoTest.service
+sudo systemctl restart DemoTest.service
+
+sudo systemctl enable DemoTest.service
+sudo systemctl disable DemoTest.service
+
+sudo journalctl -u DemoTest.service
+sudo journalctl -u DemoTest.service | tail -n 10
+sudo journalctl -u DemoTest.service --since "2023-07-17  18:15:00"

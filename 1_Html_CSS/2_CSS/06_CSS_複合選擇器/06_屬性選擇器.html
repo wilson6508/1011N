@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>06_屬性選擇器</title>
+    <style>
+        /* 第一種寫法：選中具有title屬性的元素 */
+        /* [title] {
+            color: red;
+        } */
+
+        /* 第二種寫法：選中具有title屬性，且屬性值為atguigu1的元素 */
+        /* [title="atguigu1"] {
+            color: red;
+        } */
+
+        /* 第三種寫法：選中具有title屬性，且屬性值以字母a開頭的元素 */
+        /* [title^="a"] {
+            color: red;
+        }  */
+
+        /* 第四種寫法：選中具有title屬性，且屬性值以字母u結尾的元素 */
+        /* [title$="u"] {
+            color: red;
+        }  */
+
+        /* 第五種寫法：選中具有title屬性，且屬性值包含字母u的元素 */
+        /* [title*="u"] {
+            color: red;
+        } */
+    </style>
+</head>
+<body>
+    <div title="atguigu1">尚矽谷1</div>
+	<div title="atguigu2">尚矽谷2</div>
+	<div title="guigu">尚矽谷3</div>
+	<div title="guigu" class="school">尚矽谷4</div>
+</body>
+</html>

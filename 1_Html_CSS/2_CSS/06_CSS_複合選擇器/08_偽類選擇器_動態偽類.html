@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>08_偽類選擇器_動態偽類</title>
+    <style>
+        /* lvha */
+        /* 選中的是沒有訪問過的a元素 */
+        a:link {
+            color: orange;
+        }
+        /* 選中的是訪問過的a元素 */
+        a:visited {
+            color: gray;
+        }
+        /* 選中的是鼠標懸浮狀態的a元素 */
+        a:hover {
+            color: skyblue;
+        }
+        /* 選中的是激活狀態的a元素 */
+        a:active {
+            color: green;
+        }
+        /* 選中的是鼠標懸浮的span元素 */
+        span:hover {
+            color: green;
+        }
+        /* 選中的是激活的span元素 */
+        span:active {
+            color: red;
+        }
+        /* 選中的是獲取焦點狀態的input元素、獲取焦點狀態的select元素 */
+        input:focus,
+        select:focus {
+            color: orange;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.jd.com">去京東</a>
+    <span>尚矽谷</span>
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <select>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+    </select>
+</body>
+</html>

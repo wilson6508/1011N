@@ -1,0 +1,18 @@
+將1列數據作為1個整體 進行縱向計算
+null不參與計算
+----------------------------------------------------------------------------------------------
+COUNT
+
+COUNT(*): 統計 table 有幾筆資料
+COUNT(colName): 統計該欄位不是null的資料數量
+SELECT COUNT(*) FROM dbo.user_profile WHERE usage_amount > 20;
+----------------------------------------------------------------------------------------------
+SUM AVG
+
+SELECT SUM(price) as 總和, AVG(price) as 平均 FROM tableName
+----------------------------------------------------------------------------------------------
+MAX MIN
+
+SELECT MIN(price) AS 最小值 FROM tableName
+SELECT * FROM dbo.user_profile WHERE id = (SELECT MAX(id) FROM dbo.user_profile);
+----------------------------------------------------------------------------------------------

@@ -1,0 +1,35 @@
+create table tb_user (
+    id int comment '編號',
+    name varchar(50) comment '姓名',
+    age int comment '年齡',
+    gender varchar(1) comment '性別'
+) comment '用戶表' ;
+
+show tables;
+desc tb_user;
+show create table tb_user;
+--------------------------------------------------------------------------------------
+新增欄位
+alter table emp add nickname varchar(20) comment '暱稱';
+alter table emp add price float NULL;
+update emp set price = 0;
+
+修改欄位型別
+alter table emp modify price float not null;
+
+修改欄位名稱
+alter table emp rename column old_name to new_name;
+
+修改欄位名稱和欄位型別
+alter table emp change old_name new_name varchar(30) comment '用戶名';
+
+刪除欄位
+alter table emp drop col_name;
+--------------------------------------------------------------------------------------
+修改table名稱
+alter table emp rename to employee;
+
+刪除table
+drop table if exists tb_user;
+truncate table employee;
+--------------------------------------------------------------------------------------

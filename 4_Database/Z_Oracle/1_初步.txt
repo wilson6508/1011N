@@ -1,0 +1,81 @@
+qfedu1
+123456
+123456
+
+orcl
+123456
+123456
+--------------------------------------------------------------------------
+services.msc
+sqlplus system/123456
+--------------------------------------------------------------------------
+col file_name for a50;
+set linesize 100;
+select file_name, tablespace_name from dba_data_files;
+select file_name, tablespace_name from dba_temp_files;
+--------------------------------------------------------------------------
+CREATE TABLE student (
+	sno char(9) PRIMARY KEY,
+	sname char(20) UNIQUE,
+	ssex char(2),
+	sage SMALLINT,
+	sdept char(20)
+);
+
+CREATE TABLE course (
+	cno char(4) PRIMARY KEY,
+	cname char(40),
+	cpno char(4),
+	ccredit SMALLINT,
+	FOREIGN KEY(cpno) REFERENCES course(cno)
+);
+
+CREATE TABLE sc (
+	sno char(9),
+	cno char(4),
+	grade SMALLINT,
+	PRIMARY KEY (sno, cno),
+	FOREIGN KEY (sno) REFERENCES student(sno),
+	FOREIGN KEY (cno) REFERENCES course(cno)
+);
+
+ALTER TABLE student ADD s_entrance DATE;
+ALTER TABLE student modify sage int;
+ALTER TABLE course ADD UNIQUE (cname);
+
+SELECT count(*) FROM STUDENT;
+--------------------------------------------------------------------------------------------------------------------
+GRANT dba TO scott;
+--------------------------------------------------------------------------------------------------------------------
+INSERT INTO COURSE VALUES ('1', '數據庫', NULL, 4);
+INSERT INTO COURSE VALUES ('2', '數學', NULL, 2);
+INSERT INTO COURSE VALUES ('3', '信息系統', 1, 4);
+INSERT INTO COURSE VALUES ('4', '操作系統', 2, 3);
+INSERT INTO COURSE VALUES ('5', '數據結構', 1, 4);
+INSERT INTO COURSE VALUES ('6', '數據處理', NULL, 2);
+INSERT INTO COURSE VALUES ('7', 'PASCAL語言', 6, 4);
+INSERT INTO COURSE VALUES ('8', 'DBADesign', NULL, 3);
+
+INSERT INTO STUDENT (sno, sname, ssex, sage, sdept) VALUES ('201215121', '李勇', 'm', 26, 'CS');
+INSERT INTO STUDENT (sno, sname, ssex, sage, sdept) VALUES ('201215122', '劉晨', 'f', 19, 'CS');
+INSERT INTO STUDENT (sno, sname, ssex, sage, sdept) VALUES ('201215123', '王敏', 'f', 19, 'MA');
+INSERT INTO STUDENT (sno, sname, ssex, sage, sdept) VALUES ('201215125', '劉辰', 'm', 21, 'IS');
+INSERT INTO STUDENT (sno, sname, ssex, sage, sdept) VALUES ('201215138', '陳冬東', 'm', 19, NULL);
+INSERT INTO STUDENT (sno, sname, ssex, sage, sdept) VALUES ('201215168', '陳冬南', 'f', 29, 'MA');
+
+INSERT INTO sc VALUES ('201215125', '1', 87);
+INSERT INTO sc VALUES ('201215121', '1', 90);
+INSERT INTO sc VALUES ('201215122', '3', 95);
+INSERT INTO sc VALUES ('201215125', '2', 88);
+--------------------------------------------------------------------------------------------------------------------
+SELECT SNAME AS 姓名, (2024 - SAGE) AS 出生年, LOWER(SDEPT) AS 系所 FROM STUDENT;
+SELECT * FROM STUDENT s WHERE sage NOT BETWEEN 19 AND 23;
+
+AND 優先於 OR
+
+SELECT * FROM STUDENT ORDER BY SDEPT, sage DESC;
+SELECT * FROM STUDENT ORDER BY SAGE DESC, SDEPT;
+
+SELECT COUNT(DISTINCT sno) FROM SC;
+SELECT AVG(GRADE) FROM sc WHERE cno = '3';  
+SELECT sum(c.CCREDIT) FROM sc, COURSE c WHERE sc.CNO = c.CNO AND sc.SNO = '201215125';

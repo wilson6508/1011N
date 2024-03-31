@@ -1,0 +1,41 @@
+﻿JSON編輯器
+https://jsoneditoronline.org
+https://jsonformatter.org/
+
+文字比對
+https://www.diffnow.com/compare-clips
+
+JWToken解析器
+https://jwt.io/
+
+快速生成SQL
+https://www.sqlfather.com/
+
+結構化SQL生成器
+https://github.com/liyupi/sql-generator
+
+正則判斷
+https://regex101.com/
+---------------------------------------------------------------------------------------
+自動開圖
+https://www.ptt.cc/bbs/ask/M.1487741394.A.55C.html
+
+Acer Swift3 vs Acer Swift5
+https://www.ptt.cc/bbs/nb-shopping/M.1673949850.A.0CD.html
+---------------------------------------------------------------------------------------
+@Transactional
+https://kknews.cc/zh-tw/code/9ggzjq8.html
+
+JMeter
+https://jmeter.apache.org/download_jmeter.cgi
+https://igouist.github.io/post/2022/10/jmeter/
+
+Java 的 Thread 系列
+https://ithelp.ithome.com.tw/users/20103456/ironman/1766
+https://www.twle.cn/c/yufei/javatm/javatm-basic-executorservice.html
+
+做一個POJO 和 JSON轉換的JSONUtils
+https://hackmd.io/@camiol/S1Pirv3sw
+---------------------------------------------------------------------------------------
+GitLab
+https://gitlab.com/wilson6508/demoproject.git

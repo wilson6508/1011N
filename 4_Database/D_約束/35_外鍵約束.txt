@@ -1,0 +1,18 @@
+NO ACTION / (RESTRICT) 父表刪除更新 檢查有無對應外鍵 若有則不允許交易
+CASCADE    :           父表刪除更新 檢查有無對應外鍵 若有則子表刪除/更新外鍵對應資料
+SET NULL   :           父表刪除 檢查有無對應外鍵 若有子表將外鍵設成null (該欄位允許null)
+SET DEFAULT:           父表變更 子表將外鍵設成默認值 
+----------------------------------------------------------------------------------------------
+alter table table_name 
+add constraint 外鍵名稱
+FOREIGN KEY(外鍵欄位)
+REFERENCES 主表(主表欄位)
+ON UPDATE CASCADE
+ON DELETE CASCADE;
+----------------------------------------------------------------------------------------------
+alter table emp 
+add constraint fk_emp_dept_id
+FOREIGN KEY(dept_id)
+REFERENCES dept(id)
+ON UPDATE SET NULL
+ON DELETE SET NULL;

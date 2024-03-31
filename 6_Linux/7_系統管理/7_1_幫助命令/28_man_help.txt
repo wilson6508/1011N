@@ -1,0 +1,30 @@
+ls -l /bin/ | grep sh
+
+所有的命令都是在bash裡面去解釋執行
+
+man ls
+(外部命令)
+
+man cd
+(builtin command: cd, exit ...)
+
+type cd
+type exit
+type history
+type ls
+type useradd
+
+man -f cd
+man 1p cd
+man man
+
+---------------------------------------------
+help (builtin only)
+help cd
+---------------------------------------------
+ls --help
+---------------------------------------------
+page down = space = f
+page up   = b
+
+reset

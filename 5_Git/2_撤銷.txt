@@ -1,0 +1,18 @@
+(^ 的數量決定往前幾個)
+-----------------------------------------
+撤銷commit (安全)
+git reset --soft HEAD^
+
+使main.txt到下方區
+git restore --staged main.txt
+git reset main.txt (自己整理的指令)
+
+dicard change
+git restore main.txt
+-----------------------------------------
+撤銷commit (常用)
+git reset --mixed HEAD^
+git restore main.txt
+-----------------------------------------
+撤銷commit (小心)
+git reset --hard HEAD^

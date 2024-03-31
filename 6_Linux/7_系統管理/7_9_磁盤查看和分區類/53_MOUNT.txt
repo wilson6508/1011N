@@ -1,0 +1,6 @@
+掛載 卸載
+https://www.youtube.com/watch?v=_Su9IWdlNB0
+
+ls /run/media/root/CentOS\ 7\ x86_64/
+
+右鍵 彈出

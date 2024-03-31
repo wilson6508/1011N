@@ -1,0 +1,29 @@
+create table account (
+    id int primary key auto_increment comment '主鑑id',
+    name varchar(10) comment '名字',
+    money int comment '餘額'
+) comment '帳戶表';
+
+insert into account values (null, '張三', 2000), (null, '李四', 2000);
+------------------------------------------------------------------------------
+select * from account where name = '張三';
+update account set money = money - 1000 where name = '張三';
+程式出錯...
+update account set money = money + 1000 where name = '李四';
+------------------------------------------------------------------------------
+select @@autocommit;
+set @@autocommit = 0;
+
+交易
+
+commit;
+rollback;
+------------------------------------------------------------------------------
+start transaction; / begin;
+
+交易
+
+commit;
+rollback;
+------------------------------------------------------------------------------
+事務: 一種操作的集合 只能全部成功 或全部失敗

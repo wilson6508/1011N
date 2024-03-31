@@ -1,0 +1,24 @@
+select 
+    col_name   (4)
+from 
+    table_name (1)
+where 
+    condition  (2)
+group by
+    col_name   (3)
+having
+    分組後的條件(3)
+order by
+    col_name   (5)
+limit
+    分頁參數    (6)
+--------------------------------------------------------------------------------------------------------------
+select name, age from emp where age > 15 order by age asd;
+
+select name, age from emp e where e.age > 15 order by age asd;
+
+select e.name, e.age from emp e where e.age > 15 order by age asd;
+
+select e.name ename, e.age eage from emp e where eage > 15 order by age asd; // error (select在where之後才執行)
+
+select e.name ename, e.age eage from emp e where e.age > 15 order by eage asd; 

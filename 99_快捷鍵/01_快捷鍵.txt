@@ -1,0 +1,133 @@
+﻿C:\Windows\System32\drivers\etc
+cd c:\Windows\System32
+
+                    VsCode                             IntelliJ
+-----------------------------------------------------------------------------------
+摺疊所有       Ctrl +  k, Ctrl +  0              Ctrl  +  Shift  +  -
+展開所有       Ctrl +  k, Ctrl +  j              Ctrl  +  Shift  +  +
+摺疊部分       Ctrl +  Shift   +  {              Ctrl  +  -
+展開部分       Ctrl +  Shift   +  }              Ctrl  +  +
+自動排版       Alt  +  Shift   +  f              Ctrl  +  Alt    +  l
+上一光標       Alt  +  left                      Ctrl  +  Alt    +  left
+下一光標       Alt  +  right                     Ctrl  +  Alt    +  right
+移動該行       Alt  +  up/down                   Alt   +  Shift  +  up/down
+下插一行       Ctrl +  Enter                     Shift +  Enter
+複貼該行       Alt  +  Shift + up/down           Ctrl  +  d
+反白相同       Ctrl +  d                         Alt   +  j
+滑鼠多選       Alt  +  Click                     Alt   +  Shift  +  Click
+
+關閉頁籤                            Ctrl  +  F4
+全域搜尋                            Ctrl  +  Shift  +  f
+至頂指令                            Ctrl  +  Home
+至底指令                            Ctrl  +  End
+卷軸向上                            Ctrl  +  up
+卷軸向下                            Ctrl  +  down
+上一單詞                            Ctrl  +  left
+下一單詞                            Ctrl  +  right
+視窗橫移                            Shift +  滑鼠滾輪
+剪下該行                            Ctrl  +  x
+複製該行                            Ctrl  +  c
+正常復原                            Ctrl  +  z
+取消復原                            Ctrl  +  Shift  +  z
+-----------------------------------------------------------------------------------
+IntelliJ
+snipaste截圖軟體
+https://mopcode.com/a/44903859973263360.html
+https://www.itread01.com/content/1548515347.html
+https://blog.csdn.net/gnail_oug/article/details/78281354 (全域替換)
+https://www.796t.com/content/1546355883.html (自動補全shortcut更換)
+
+編寫程式
+Ctrl  +  Alt  +  t		    環繞
+Ctrl  +  Alt  +  m          抽取為方法
+Shift +  F6                 批量修改(class variable method) > enter
+Ctrl  +  Alt  +  v			自產變量
+Ctrl  +  Backspace
+Ctrl  +  Delete
+iter                        加強迴圈
+itli                        基礎迴圈
+Ctrl  +  o 				    orverride method
+Ctrl  +  i				    implements method
+Ctrl  +  p                  重現提示
+Ctrl  +  j				    提示模板
+Ctrl  +  w                  選擇程式碼塊(可重複按)
+Ctrl  +  Shift  +  Alt + J  選取所有相同內容
+Ctrl  +  r                  replace
+Ctrl  +  l                  find next
+Ctrl  +  F12                查看該類的所有方法
+Ctrl  +  h                  open hierarchy
+Ctrl  +  u                  查看父類
+
+移動焦點
+Ctrl  +  b                  進入類
+Ctrl  +  Alt  +  b          查看定義or來源(到實現類=Ctrl+Alt+滑鼠左鍵)
+Ctrl  +  Alt  +  u          查看類關係圖
+Shift +  Shift              檔案搜尋(Ctrl + n)
+Alt   +  left/right         頁籤切換
+Alt   +  up                 上一個方法
+Alt   +  down               下一個方法
+Shift +  Enter
+Ctrl  +  Alt  +  Enter
+Ctrl  +  F4                 close
+
+橫列操作
+Ctrl  +  y				    delete row
+
+其它快鍵
+Ctrl  +  Alt    +  o        整理import
+Ctrl  +  Shift  +  F8       刪除break point
+Ctrl  +  Shift  +  F10      執行main
+Ctrl  +  Shift  +  u        大小寫轉換
+Ctrl  +  Shift  +  r        全域替換
+
+除錯模式
+main 右鍵功能表→【Debug】
+F2  跳轉到下一個錯誤or警告位置
+F7	追入此行裡使用的方法 (Step into)
+F8	執行一步 (Step over)
+F9	繼續執行 (Resume)
+=================================================================================================
+VScode (vscode icon)
+https://iter01.com/651963.html
+https://blog.poychang.net/vscode-shortcuts/
+https://summer10920.github.io/2020/10-23/article-vscode/#%E5%BF%AB%E6%8D%B7%E9%8D%B5%E7%AF%87
+https://www.ucamc.com/e-learning/computer-skills/317-vscode-windows-%E7%89%88%E6%9C%AC%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%8D%B5
+F1                          命令搜尋
+Ctrl  +  p                  檔案搜尋
+Ctrl  +  k, Ctrl + s        快鍵搜尋
+Ctrl  +  k, Ctrl + x        刪除結尾空白
+Ctrl  +  Alt   + up/down    垂直選取
+Ctrl  +  i                  智能輸入
+clg   or log                console.log()
+vue-helper
+=================================================================================================
+Notepad++
+https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/573551/
+
+Ctrl + q             註解
+Alt  + h             隱藏行
+Ctrl + l             刪除行
+Ctrl + d             複製到下一行
+Ctrl + Shift + up    當前行上移
+Ctrl + Shift + down  當前行下移
+=================================================================================================
+網頁
+ctrl + F5           清除瀏覽器快取
+=================================================================================================
+鍵盤
+win   + up          放大視窗
+win   + down        縮小視窗
+win   + r           執行
+win   + d 			回桌面
+win   + e 			檔案總管
+win   + l           電腦鎖定
+shift + tab 		tab相反
+shift + space       半形全形切換
+win   + shift + s 	截圖
+
+win   + tab         視窗管理
+win   + ctrl  + D   建立新虛擬桌面
+win   + ctrl  + F4  刪除使用中虛擬桌面
+win   + ctrl  + left  切換至左側虛擬桌面
+win   + ctrl  + right 切換至右側虛擬桌面
+=================================================================================================
