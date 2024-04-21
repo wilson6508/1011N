@@ -1,0 +1,113 @@
+https://www.bilibili.com/video/BV1Gi4y147aF/
+-----------------------------------------------------------------------------------------
+資料庫
+
+select * from master.dbo.sysdatabases;
+create database FiveDB2;
+drop database FiveDB2;
+alter database FiveDB2 modify name = FiveDB3;
+-----------------------------------------------------------------------------------------
+資料表
+
+use FiveDB3;
+create table GenderTable (
+    ID int primary key,
+    Gender nvarchar(50) not null
+);
+select * from information_schema.tables;
+-----------------------------------------------------------------------------------------
+外鍵
+
+alter table EmployeeTable
+add constraint FK_EmployeeTable_GenderID_GenderTable_ID
+foreign key (GenderID) references GenderTable (ID);
+
+無動作: 禁制更新和刪除
+級聯重疊: 同時被更新和刪除
+改為null:
+改為預設值
+-----------------------------------------------------------------------------------------
+預設值
+
+alter table EmployeeTable
+add constraint Default_Phone_99999
+default 99999 for phone;
+
+insert into EmployeeTable
+(ID, Name, GenderID) values
+(5, '兆六', 3);
+-----------------------------------------------------------------------------------------
+欄位約束
+
+alter table EmployeeTable
+add constraint CK_Phone
+check (Phone > 0);
+
+insert into EmployeeTable values (6, 'Mike', -100, 3);
+-----------------------------------------------------------------------------------------
+unique key
+
+create table EmployeeTable2 (
+    ID int primary key,
+    Name nvarchar(50),
+    Phone int check (Phone > 0),
+    Email nvarchar(50) unique,
+    GenderID int references GenderTable (ID)
+);
+
+insert into EmployeeTable2 values (1, 'Mike', 10000, 'Mike@yahoo.com', 1);
+insert into EmployeeTable2 values (2, 'Jack', 10000, 'Mike@yahoo.com', 1);
+-----------------------------------------------------------------------------------------
+select distinct ShipCountry, ShipVia from Orders
+select OrderID, ShippedDate, ShipCountry from Orders
+where ShipCountry not in ('France', 'USA', 'UK', 'Germany');
+-----------------------------------------------------------------------------------------
+group by
+
+select OrderID, sum(UnitPrice * Quantity * (1 - Discount)) as OrderPrice
+from [Order Details]
+group by OrderID
+having OrderID in (10248, 10249);
+-----------------------------------------------------------------------------------------
+join
+
+select * from Region;
+select * from Territories;
+select * from Region cross join Territories;
+
+select * from Region inner join Territories
+on Region.RegionID = Territories.RegionID;
+-----------------------------------------------------------------------------------------
+stored procedure
+
+create procedure getEmployeeAddress
+as
+begin
+    select FirstName, LastName, [Address] from Employees
+end
+
+調用
+getEmployeeAddress
+
+create procedure getEmployeeAddressByLastName
+@lastName nvarchar(50)
+as
+begin
+    select FirstName, LastName, [Address] from Employees
+    where LastName = @lastName
+end
+
+調用
+getEmployeeAddressByLastName 'Davolio'
+getEmployeeAddressByLastName @lastName = 'Davolio'
+
+alter procedure getEmployeeAddressByLastName
+@lastName nvarchar(50),
+@name nvarchar(100) output,
+@address nvarchar(1000) output
+as
+begin
+    select @name = FirstName + '' + LastName, @address = [Address] from Employees
+    where LastName = @lastName
+end
+-----------------------------------------------------------------------------------------
