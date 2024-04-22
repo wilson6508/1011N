@@ -1,0 +1,13 @@
+command -v netstat
+sudo netstat -ntlp
+sudo apt install net-tools
+-------------------------------------------------------------------
+3種Linux查看port佔用
+https://www.ltsplus.com/linux/3-way-check-linux-listen-port
+
+command -v netstat
+netstat -ntlp
+
+netstat -tulpn | grep :8081
+lsof -i -P -n | grep :8081
+-------------------------------------------------------------------

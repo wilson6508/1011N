@@ -1,0 +1,14 @@
+https://www.hanktsai.com/2021/01/configure-ubuntu1804-timezone.html
+
+# 顯示當前的系統時區
+timedatectl
+cat /etc/timezone
+
+# 可以設定的時區
+timedatectl list-timezones
+
+# 將系統修改為Asia/Taipei
+sudo timedatectl set-timezone Asia/Taipei
+
+# 重啟機器上的mysql
+systemctl restart mysqld.service

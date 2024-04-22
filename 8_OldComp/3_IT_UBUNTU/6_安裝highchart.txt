@@ -1,0 +1,20 @@
+sudo apt-get install -y bzip2
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm i highcharts-export-server@2.1.0 -g
+highcharts-export-server
+
+How To Install "bzip2" Package on Ubuntu
+https://zoomadmin.com/HowToInstall/UbuntuPackage/bzip2
+https://www.cnblogs.com/zhangzhonghui/articles/12669364.html
+
+更新Node.js到最新版本
+https://blog.cre0809.com/archives/353/
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04
+https://github.com/nodesource/distributions/blob/master/README.md
+
+highcharts-export-server
+https://www.npmjs.com/package/highcharts-export-server/v/2.1.0?activeTab=readme
+
+常用的 apt 指令 （安裝、更新、移除）
+https://sean22492249.medium.com/%E5%B8%B8%E7%94%A8%E7%9A%84-apt-%E6%8C%87%E4%BB%A4-%E5%AE%89%E8%A3%9D-%E6%9B%B4%E6%96%B0-%E7%A7%BB%E9%99%A4-cbb56f595568

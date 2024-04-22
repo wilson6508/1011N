@@ -1,0 +1,5 @@
+sudo journalctl -u nginx.service | tail -n 10
+sudo journalctl -u nginx.service --since "2024-01-24 17:53:48"
+
+cat /opt/tornado/logs/nginx/access.log | tail -n 10
+cat /opt/tornado/logs/nginx/error.log | tail -n 10

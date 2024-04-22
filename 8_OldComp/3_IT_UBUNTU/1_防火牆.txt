@@ -1,0 +1,21 @@
+https://footmark.com.tw/news/linux/ubuntu/ubuntu-server-ufw/
+https://blog.tarswork.com/post/ubuntu-firewall-setting-using-ufw/
+
+
+sudo ufw status            // 查看防火牆狀態
+sudo ufw enable            // 啟動防火牆，執行後開機也會自動啟動
+sudo ufw disable           // 關閉防火牆
+sudo ufw status verbose    // 查看防火牆詳細狀態
+
+sudo ufw default allow                                 // 預設全部允許
+sudo ufw default deny                                  // 預設全部阻擋
+sudo ufw allow ssh                                     // 允許 SSH 服務連線
+sudo ufw allow 80                                      // 允許通過 80 Port 使用 tcp 與 udp 連線
+sudo ufw allow 80/tcp                                  // 允許通過 80 Port 使用 tcp 連線
+sudo ufw allow from 192.168.0.1                        // 允許來自 192.168.0.1 通過所有連線
+sudo ufw allow from 192.168.0.1 to any port 3306       // 允許來自 192.168.0.1 通過 3306 Port
+
+sudo ufw allow 80
+sudo ufw deny 80
+
+sudo ufw reset                                         // 重設UFW規則(小心使用)

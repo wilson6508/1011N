@@ -1,0 +1,18 @@
+ln -s /opt/tornado/etc/nginx/sites-available/rd3-test4.conf /opt/tornado/etc/nginx/sites-enable/rd3-test4.conf
+-s: 軟鏈接
+參數1: 被鏈接的檔案或資料夾
+參數2: 捷徑
+https://skyao.gitbooks.io/learning-nginx/content/configure/vhost/action_domian.html
+---------------------------------------------------------------------------------------------------------------------------------
+cd /opt/tornado/etc/nginx
+
+.
+├── sites-available
+│   ├── rd3-test1.conf
+│   ├── rd3-test2.conf
+│   ├── release-test1.conf
+│   └── schdon.conf
+└── sites-enable
+    ├── release-test1.conf -> /opt/tornado/etc/nginx/sites-available/release-test1.conf
+    └── schdon.conf -> /opt/tornado/etc/nginx/sites-available/schdon.conf
+---------------------------------------------------------------------------------------------------------------------------------

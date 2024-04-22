@@ -1,0 +1,128 @@
+https://officeguide.cc/linux-logrotate-manage-log-rotation-tutorial-examples/
+https://jiaming0708.github.io/2021/01/26/logrotate-nginx/
+
+crontab會去執行cron.weekly
+cron.weekly有一個logrotate腳本 (/usr/sbin/logrotate /etc/logrotate.conf)
+
+對於個別套件或服務（例如 nginx 等）的記錄檔輪替設定
+/etc/logrotate.conf include /etc/logrotate.d
+--------------------------------------------------------------------------------------------------------
+ls /etc/ | grep cron
+cron.d
+cron.daily
+cron.hourly
+cron.monthly
+crontab
+cron.weekly
+--------------------------------------------------------------------------------------------------------
+https://superuser.com/questions/402781/what-is-run-parts-in-etc-crontab-and-how-do-i-use-it
+
+查看cron.daily執行的時間
+cat /etc/crontab
+
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+# You can also override PATH, but by default, newer versions inherit it from the environment
+#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+--------------------------------------------------------------------------------------------------------
+cat /etc/cron.daily/logrotate
+
+#!/bin/sh
+
+# skip in favour of systemd timer
+if [ -d /run/systemd/system ]; then
+    exit 0
+fi
+
+# this cronjob persists removals (but not purges)
+if [ ! -x /usr/sbin/logrotate ]; then
+    exit 0
+fi
+
+/usr/sbin/logrotate /etc/logrotate.conf
+EXITVALUE=$?
+if [ $EXITVALUE != 0 ]; then
+    /usr/bin/logger -t logrotate "ALERT exited abnormally with [$EXITVALUE]"
+fi
+exit $EXITVALUE
+--------------------------------------------------------------------------------------------------------
+cat /etc/logrotate.conf
+
+# see "man logrotate" for details
+# global options do not affect preceding include directives
+# rotate log files weekly
+weekly
+
+# use the adm group by default, since this is the owning group
+# of /var/log/syslog.
+su root adm
+
+# keep 4 weeks worth of backlogs
+rotate 4
+
+# create new (empty) log files after rotating old ones
+create
+
+# use date as a suffix of the rotated file
+#dateext
+
+# uncomment this if you want your log files compressed
+#compress
+
+# packages drop log rotation information into this directory
+include /etc/logrotate.d
+
+# system-specific logs may also be configured here.
+--------------------------------------------------------------------------------------------------------
+ls /etc/logrotate.d | grep nginx
+cat /etc/logrotate.d/nginx
+
+/opt/tornado/logs/nginx/*.log {
+    su tornado root
+    daily
+    dateext
+    dateformat -%Y-%m-%d
+    missingok
+    rotate 370
+    copytruncate
+    compress
+    delaycompress
+    notifempty
+    create 755 www-data tornado
+    sharedscripts
+    postrotate
+    [ -s /run/nginx.pid ] && kill -USR1 `cat /run/nginx.pid`
+    endscript
+}
+--------------------------------------------------------------------------------------------------------
+額外補充知識
+
+寫資訊到/var/log/syslog
+logger -t logrotate "ALERT exited abnormally with 123"
+tail -5 /var/log/syslog
+
+如果沒有/var/log/syslog
+sudo apt-get install --reinstall rsyslog
+sudo service rsyslog restart
+
+logger命令的使用
+https://blog.csdn.net/u011630575/article/details/52055116
+--------------------------------------------------------------------------------------------------------

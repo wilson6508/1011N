@@ -1,0 +1,29 @@
+server {
+        listen 8086;
+        add_header Cache-Control max-age=0;
+        root /opt/tornado/webs/insight5Change;
+        index /login.html;
+
+        location / {
+                return 301 https://xxxxxx.com.tw/login.html;
+        }
+
+        location = /login.html {
+                index login.html;
+        }
+
+        location /assets {
+                try_files $uri $uri/ /assets;
+        }
+
+        location = /login-bg.jpg {
+                root /etc/nginx;
+                try_files $uri $uri/ /images/default.gif;
+        }
+
+        location /img {
+                root /mnt/nas-01/Product/Insight/ChannelInfluence;
+                try_files $uri $uri/ /img/Default.png;
+        }
+
+}
