@@ -1,0 +1,12 @@
+touch test_{1..5}_demo.txt
+touch test_{1..5}_demo.jpg
+
+ls *.jpg
+ls *.txt
+ls *.jpg *.txt
+
+file_name=test_1_demo.txt
+echo ${file_name//_demo/}
+
+for file in $(ls *de*.jpg); do echo "$file"; done
+for file in $(ls *de*.jpg); do mv "$file" $(echo ${file//_demo/}); done

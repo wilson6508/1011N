@@ -1,0 +1,11 @@
+如果para為空 返回word
+result=${para:-word}
+
+如果para為空 word賦值給para 並返回
+result=${para:=word}
+
+如果para為空 word當作stderr輸出 不為空則輸出變量值
+${para:?word}
+
+如果para為空 什麼都不做 不為空返回word
+${para:+word}

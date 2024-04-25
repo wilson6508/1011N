@@ -1,0 +1,27 @@
+name=Apple123
+unset name
+
+# startIdx
+echo ${name: 1}
+
+# startIdx:length
+echo ${name: 1:2}
+-----------------------------------------------
+name=abcABC123ABCabc
+
+# 去頭
+echo ${name#a*c}
+echo ${name##a*c}
+
+# 去尾
+echo ${name%a*c}
+echo ${name%%a*c}
+-----------------------------------------------
+str="rrr"
+
+# 單一置換
+echo ${str/r/R}
+
+# 全部置換
+echo ${str//r/R}
+-----------------------------------------------
