@@ -1,1 +1,9 @@
 ps -ef --forest
+echo $BASH_SUBSHELL
+
+加上小括號就是開啟子shell運行命令
+(cd ~; pwd; ls; cd /tmp/; pwd; ls)
+(cd ~; pwd; ls; cd /tmp/; pwd; ls; echo $BASH_SUBSHELL)
+
+開啟子shell運行命令 其目的是不要卡死主進程
+(pwd; (echo $BASH_SUBSHELL))

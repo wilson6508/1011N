@@ -1,0 +1,34 @@
+vim date_tesh.sh
+
+#!/bin/bash
+echo "The current time is `date`"
+--------------------------------------------
+vim echo_var.sh
+
+#!/bin/bash
+echo "User info for username: ${USER}"
+echo "User UID is : $UID"
+
+# 家目錄
+echo "User Home is : " $HOME
+--------------------------------------------
+echo "The price is $100"
+echo "The price is \$100"
+
+單引號 不做語法翻譯
+echo 'The price is $100'
+echo 'The price is \$100'
+--------------------------------------------
+vim make_var.sh
+
+#!/bin/bash
+days=10
+name="超哥"
+
+echo "$name 教課 $days 天"
+
+sh make_var.sh
+echo $name
+source make_var.sh
+echo $name
+--------------------------------------------
