@@ -1,0 +1,12 @@
+cat test.txt | grep Hello > demo.log
+cat test.txt | grep HelloWorld >> demo.log
+cat test.txt noExist.txt
+
+# > 其實是 1>
+# >> 其實是 1>>
+cat test.txt noExist.txt >> demo.log
+cat test.txt noExist.txt 2> demo.log
+
+把2綁定到1
+cat test.txt noExist.txt >> demo.log 2>&1
+cat test.txt noExist.txt > /dev/null 2>&1

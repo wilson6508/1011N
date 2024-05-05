@@ -1,0 +1,13 @@
+# 把標準輸入轉為標準輸出
+cat
+
+# 將test.txt檔案的內容 作為標準輸入 輸入給cat命令
+cat < test.txt
+
+cat << EOF
+
+# 把cat命令的標準輸出重定向到test2.txt
+cat > test2.txt << EOF
+> Hello
+> 123
+> EOF

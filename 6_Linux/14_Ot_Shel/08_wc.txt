@@ -1,0 +1,17 @@
+cat -A test.txt
+wc test.txt
+3 12 37 test.txt
+(3列 12單詞 37字元)
+-----------------------------------
+# 列數
+wc -l test.txt
+
+# 單詞數
+wc -w test.txt
+
+# 字節數
+wc -c test.txt
+
+# 字符數
+wc -m test.txt
+-----------------------------------

@@ -1,0 +1,29 @@
+# NF = number of field
+# NR = number of record
+
+# FS = field separator
+# RS = record separator
+
+# OFS = output field separator
+# ORS = output record separator
+
+awk '/xm/{print $0}' test.txt
+awk '{$4=5566; print $1,$2,$3,$4}' test.txt
+-------------------------------------------------------------------------------------
+# 最後一個field
+awk '{print $NF}' test.txt
+awk '{print $NF-1}' test.txt
+
+# 修改輸出分隔符
+awk '{OFS="#"; $1=$1; print $0}' test.txt
+awk -v OFS="#" '{$1=$1; print $0}' test.txt
+awk '{printf "%-3s %2d %2d %2d\n", $1, $2, $3, $4}' test.txt
+
+# 指定輸出列
+awk 'NR==3 {print $0}' test.txt
+awk 'NR==1 || NR==3 {print $0}' test.txt
+awk 'NR==1, NR==3 {print $0}' test.txt
+
+# 控制流程
+awk '{if(NR==3) {print $0} else {print "不是第三列"}}' test.txt
+-------------------------------------------------------------------------------------
