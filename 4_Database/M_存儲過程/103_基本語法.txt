@@ -1,0 +1,25 @@
+# 建立
+create procedure p1()
+begin
+    select count(*) from emp;
+end;
+
+# 調用
+call p1();
+
+# 查看
+select * from information_schema.ROUTINES where ROUTINE_SCHEMA = 'itheima';
+show create procedure p1;
+
+# 刪除
+drop procedure if exists p1;
+
+# 命令行
+delimiter $$
+create procedure p1()
+begin
+    select count(*) from emp;
+end$$
+
+delimiter ;
+call p1();
