@@ -13,7 +13,7 @@ show create procedure p1;
 
 # 刪除
 drop procedure if exists p1;
-
+---------------------------------------------------------------------------------------
 # 命令行
 delimiter $$
 create procedure p1()

@@ -1,0 +1,12 @@
+-- 賦值
+set @myname = 'itcast';
+set @myage := 10;
+set @mygender := '男', @myhobby := 'java';
+
+select @mycolor := 'red';
+select count(*) into @mycount from emp;
+
+-- 使用
+select @myname, @myage, @mygender, @myhobby;
+select @mycolor, @mycount;
+select @abc;

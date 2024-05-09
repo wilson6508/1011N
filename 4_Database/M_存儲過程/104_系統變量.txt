@@ -1,0 +1,14 @@
+-- 查看系統變量
+show variables;
+show session variables ;
+show session variables like 'auto%';
+
+show global variables ;
+show global variables like 'auto%';
+
+select @@autocommit;
+select @@session.autocommit;
+select @@global.autocommit;
+
+-- 設置系統變量
+set session autocommit = 0;
