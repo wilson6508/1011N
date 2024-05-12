@@ -1,0 +1,28 @@
+create procedure p11(in age_limit int)
+begin
+    declare u_name varchar(100);
+    declare u_age int;
+    declare u_job varchar(100);
+    declare u_cursor cursor for select name, age, job from emp where age <= age_limit;
+
+    -- declare exit handler for SQLSTATE '02000' close u_cursor;
+    declare exit handler for not found close u_cursor;
+
+    drop table if exists tb_user;
+    create table tb_user(
+        id int primary key auto_increment,
+        name varchar(100),
+        age int,
+        job varchar(100)
+    );
+
+    open u_cursor;
+    while true do
+        fetch u_cursor into u_name, u_age, u_job;
+        insert into tb_user values (null, u_name, u_age, u_job);
+    end while;
+    close u_cursor;
+
+end;
+
+call p11(22);

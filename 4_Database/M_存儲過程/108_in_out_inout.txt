@@ -1,0 +1,23 @@
+create procedure p4(in score int, out result varchar(10))
+begin
+    if score >= 85 then
+        set result := '優秀';
+    elseif score >= 60 then
+        set result := '及格';
+    else
+        set result := '不及格';
+    end if;
+end;
+
+call p4(98, @result);
+select @result;
+------------------------------------------------------------------------
+create procedure p5(inout score double)
+begin
+    set score := score * 0.5;
+end;
+
+set @score := 78;
+call p5(@score);
+select @score;
+------------------------------------------------------------------------

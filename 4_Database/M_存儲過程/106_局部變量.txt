@@ -1,0 +1,13 @@
+局部變量的範圍在BEGIN...END之間
+
+create procedure p2()
+begin
+    -- 聲明
+    declare stu_count int default 0;
+    -- 賦值
+    -- set stu_count := 100;
+    select count(*) into stu_count from emp;
+    select stu_count;
+end;
+
+call p2();

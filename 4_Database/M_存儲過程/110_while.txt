@@ -1,0 +1,11 @@
+create procedure p7(in num int)
+begin
+    declare total int default 0;
+    while num > 0 do
+        set total := total + num;
+        set num := num - 1;
+    end while;
+    select total;
+end;
+
+call p7(100);

@@ -1,0 +1,13 @@
+create procedure p8(in num int)
+begin
+    declare total int default 0;
+    repeat
+        set total := total + num;
+        set num := num - 1;
+    until num <= 0
+    end repeat;
+    select total;
+end;
+
+call p8(10);
+call p8(100);
