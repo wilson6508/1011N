@@ -1,0 +1,18 @@
+存儲函數: 有返回值的存儲過程 參數只能是in類型
+
+DETERMINISTIC: 參數相同則返回值相同
+NO SQL: 不含SQL語句
+READS SQL DATA: 含讀取語句 不含寫入語句
+
+create function fun1(num int)
+returns int DETERMINISTIC -- NO SQL -- READS SQL DATA
+begin
+    declare total int default 0;
+    while num > 0 do
+        set total := total + num;
+        set num := num - 1;
+    end while;
+    return total;
+end;
+
+select fun1(100);
