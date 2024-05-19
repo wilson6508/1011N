@@ -1,0 +1,35 @@
+輸出包含該字串的行
+
+-w 完全匹配
+-i 忽略大小寫
+-v 反向查 輸出不匹配的行
+
+-n 顯示匹配的行號
+-e 多個查找
+-E 正則
+
+-r 遞歸查找文件
+-l 只顯示匹配的文件名
+------------------------------------------------------------------------------------
+$ cat test.txt
+hello
+helloworld
+
+Hello
+Helloworld 5566
+
+today is a sunny day
+------------------------------------------------------------------------------------
+grep hello test.txt
+grep -w hello test.txt
+grep -i hello test.txt
+grep -e hello -e today test.txt
+grep -n hello test.txt
+grep -v hello test.txt
+grep -E 'hello|today' test.txt
+
+grep -r hello .
+grep -rl hello .
+------------------------------------------------------------------------------------
+grep -r hello .
+for file in $(grep -rl hello .); do sed -i 's/hello/old/g' "$file"; done

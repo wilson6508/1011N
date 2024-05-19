@@ -1,0 +1,14 @@
+-r 複製資料夾
+-v 輸出複製細節
+-i 覆蓋前詢問
+-f 目標文件已存在 但無法打開 刪除文件後重新複製
+
+$ cp -v a.txt b.txt
+'a.txt' -> 'b.txt'
+
+$ cp -v a.txt dir/
+'a.txt' -> 'dir/a.txt'
+
+$ cp -rv dir/ dir2/
+'dir/' -> 'dir2/'
+'dir/a.txt' -> 'dir2/a.txt'
