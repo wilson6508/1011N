@@ -1,0 +1,22 @@
+find . -name "*.txt"
+find . -iname "*.txt"
+find . -user root
+find . -group root
+
+找檔案
+find . -type f
+
+找資料夾
+find . -type d
+
+找鏈接
+find . -type l
+
+找1分鐘以前修改過的檔案
+find . -mmin +1
+
+找1分鐘以內修改過的檔案
+find . -mmin -1
+
+找1天以內修改過的檔案
+find . -mtime -1

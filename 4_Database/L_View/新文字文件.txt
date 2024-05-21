@@ -1,0 +1,13 @@
+-- 創建view表
+create or replace view stu_v_1 as select id, name from emp where id <= 5;
+
+-- 查看view
+show create view stu_v_1;
+select * from stu_v_1 where id in (1, 2, 3);
+
+-- 修改view表
+create or replace view stu_v_1 as select id, name, age from emp where id <= 5;
+alter view stu_v_1 as select id, name from emp where id <= 5;
+
+-- 刪除view表
+drop view if exists stu_v_1;
