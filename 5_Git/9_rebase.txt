@@ -1,0 +1,8 @@
+rebase: 修改特定分支的基底 -> 把另一個分支的變更 當成此分支的基礎
+git commit -m "update"
+git rebase origin/main
+git push origin
+
+如果不需要保留本地的修改
+git fetch origin
+git reset --hard origin/main
