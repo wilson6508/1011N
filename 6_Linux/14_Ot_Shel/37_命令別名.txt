@@ -1,0 +1,16 @@
+https://b11et3un53m.feishu.cn/wiki/Rfocw7ctXij2RBkShcucLZbrn2d
+
+# 查看別名
+alias -p
+
+# 設置別名(暫時)
+alias ct='cat /etc/passwd'
+# 撤銷別名(暫時)
+unalias ct
+
+# 設置別名(永久)
+vi ~/.bashrc
+vi /root/.bashrc
+alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}\t{{.Names}}"'
+source ~/.bashrc
+source /root/.bashrc
