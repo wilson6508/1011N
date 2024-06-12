@@ -1,8 +1,10 @@
 https://ithelp.ithome.com.tw/articles/10220982
+https://ithelp.ithome.com.tw/articles/10288477
 
 git stash
 git stash list
 git stash apply stash@{0}
 
 git stash clear
-git stash clear stash@{0}
+git stash drop 0
+git stash drop 2
