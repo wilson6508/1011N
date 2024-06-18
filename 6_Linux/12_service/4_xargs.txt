@@ -1,10 +1,26 @@
+# 默認是echo
+command1 | xargs 
+
+# 基礎用法
+echo "hello world" | xargs
 find . -name "*.txt" | xargs rm
-
 echo 3 | xargs echo 4
-echo 3 | xargs -I {} echo {} 4
 
+# The -n 3 option specifies that xargs should process three arguments at a time.
 echo "1 2 3 4 5 6 7 8 9 10" | xargs -n 3 echo
-The -n 3 option specifies that xargs should process three arguments at a time.
 
-尚未理解
-command1 | xargs -0 command2
+# -d:指定拆分的分隔符 (預設是空格)
+echo "hello#world" | xargs -n 1 -d "#"
+echo -n "hello#world" | xargs -n 1 -d "#"
+
+# 告訴我要執行的命令 (prompt)
+echo "hello#world" | xargs -n 1 -d "#" -p
+echo "hello#world" | xargs -n 1 -d "#" -t
+
+# 指定要使用參數的位置
+echo 5566 | xargs -I {} echo {} abc
+echo 5566 | xargs -I {} echo abc {}
+
+# -r: no run if empty
+echo abc | xargs -I {} -r pwd
+echo | xargs -I {} -r pwd
