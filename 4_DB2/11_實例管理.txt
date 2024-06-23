@@ -1,0 +1,48 @@
+創建實例
+先創建2個用戶與其group(受防護用戶與實例用戶)
+實例與用戶名一樣
+實例會使用該用戶的home路徑存放資訊
+
+DB2DIR/instance/db2icrt -u FencedID lnstName
+                          (受防護用戶) (實例名)
+
+使用root
+./db2icrt -u db2fenc1 db2inst1
+--------------------------------------------------------------
+查看實例
+db2ilist
+
+啟動實例(啟動db)
+db2start
+
+連接實例
+db2 attach to db2inst1
+
+斷開實例
+db2 detach
+
+停止實例
+db2 stop
+db2 stop force
+
+查看實例參數
+db2 get dbm cfg
+
+修改實例參數
+db2 update dbm cfg using 參數名 參數值
+
+修改實例參數為默認值
+db2 reset dbm cfg
+
+刪除實例(具有root權限)
+cd /opt/ibm/db2/V10.5/instance
+./db2idrop db2inst1
+
+實例自動啟動
+db2iauto
+
+更新實例
+db2iupdt
+
+遷移實例
+db2imigr

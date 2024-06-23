@@ -1,0 +1,10 @@
+# 上一個命令
+!!
+
+# 倒數第一個以e開頭的命令
+!e
+
+# -e escape
+echo "hello\nworld"
+echo -e "hello\nworld"
+echo -e "hello\tworld"

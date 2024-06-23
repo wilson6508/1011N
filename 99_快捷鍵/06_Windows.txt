@@ -1,0 +1,18 @@
+win  + d
+win  + e
+ctrl + n:   開啟相同視窗
+win  + v:   開啟剪貼簿
+win  + .:   emoji
+win  + +:   放大鏡
+win  + esc: 關閉放大鏡
+
+快捷鍵
+https://www.youtube.com/watch?v=ptnjf3CQAqI
+新電腦設定
+https://www.youtube.com/watch?v=C2VV3t0oyZg
+手寫簽名
+https://www.youtube.com/shorts/YcL9erLqbE8
+電腦回春
+https://www.youtube.com/shorts/bQwavDUc4ds
+開關歷史剪貼簿
+https://www.techbang.com/posts/89017-how-do-i-use-the-windows-clipboard-history-record-feature
