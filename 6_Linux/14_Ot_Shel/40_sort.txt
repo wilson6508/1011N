@@ -1,0 +1,27 @@
+# 以字典序排序
+cat /etc/passwd | head | sort
+
+# reverse
+cat /etc/passwd | head | sort -r
+
+# 指定分隔符 指定排序第幾列
+cat /etc/passwd | tail | sort -t ":" -k 3
+
+# 以數值大小排序
+cat /etc/passwd | tail | sort -t ":" -k 3 -n
+
+# 指定空格為分隔符 如果數值有英文
+ls -lh | sort -k 5 -h
+
+# 將排序結果保存到指定文件
+ls -lh | sort -k 5 -h -o log.sh
+
+# 去重複
+sort -u test.txt
+
+# 這份文件是否已排序
+sort -C test.txt
+echo $?
+
+# 查看是哪一行造成文件尚未排序
+sort -c test.txt

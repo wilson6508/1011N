@@ -1,0 +1,11 @@
+# 移動
+ctrl + a
+ctrl + e
+
+# 刪
+ctrl + u
+ctrl + k
+ctrl + y
+
+# 刪除前一單詞
+ctrl + w

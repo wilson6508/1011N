@@ -1,0 +1,23 @@
+﻿function findDuplicat
+
+// function to remove a specific number from an array
+tab
+ctrl + R Arrow
+Esc
+
+開右側窗
+ctrl + enter
+看更多的建議
+
+Inline Chat
+ctrl + i
+生成用戶註冊表單 用戶填寫郵箱和密碼後點提交按鈕 完成註冊操作
+按Accept
+
+選取code -> Inline Chat -> 進行修改
+
+左側有Chat SideBar
+怎麼連接數據庫
+SideBar可以移動
++
+history

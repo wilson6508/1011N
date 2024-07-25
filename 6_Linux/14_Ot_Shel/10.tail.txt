@@ -1,0 +1,28 @@
+# 最後10行
+tail ttt.txt
+
+# 最後5行
+tail -n 5 ttt.txt
+
+# follow
+tail -f ttt.txt
+
+# 文件丟失後 會等待該文件新建
+tail -F ttt.txt
+------------------------------------------------------------
+cat log.sh
+#!/bin/bash
+
+logfile="/home/test/test.log"
+
+# 以當前時間+5分鐘 為結束的時間
+end_time=$(( $(date +%s) + 300 ))
+
+while [ $(date +%s) -le $end_time ]
+do
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    echo $timestamp
+    echo $timestamp >> $logfile
+    sleep 5
+done
+------------------------------------------------------------
