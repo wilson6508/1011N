@@ -1,0 +1,28 @@
+cat test1.sh
+echo "hello world!"
+哈哈
+
+# byte
+cut -b 1 test1.sh
+cut -b 1-3 test1.sh
+cut -b 2- test1.sh
+cut -b -3 test1.sh
+cut -b 1,3,4 test1.sh
+
+# -n 多字節字符不拆分
+cut -nb 1 test1.sh
+
+# -c 依字符為單位
+cut -c 1 test1.sh
+
+# delimiter fields
+cut -d " " -f 1 test1.sh
+
+# -s 只輸出包含指定分隔符的列
+cut -d " " -f 1 -s test1.sh
+
+# 更換輸出分隔符
+cut -d " " -f 1- -s --output-delimiter "@" test1.sh
+
+# 取反
+cut -d " " -f 1 -s --complement test1.sh

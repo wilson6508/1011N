@@ -32,6 +32,6 @@ more initial-setup-ks.cfg
 下一頁: 空白鍵
 往上: b
 往下: f
-查看目前row num: =
-查看文件名&目前row num: =
+查看目前row num按=
+查看文件名&目前row num按:f
 -------------------------------------
