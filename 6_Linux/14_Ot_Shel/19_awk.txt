@@ -1,0 +1,50 @@
+https://www.bilibili.com/video/BV1bV41137BW/?spm_id_from=333.788
+----------------------------------------------------------------------------------------------------
+awk '/xm/' testfile.txt
+awk '{print length($1)}' testfile.txt
+----------------------------------------------------------------------------------------------------
+# 內置函數 length index
+awk '/xm/ {print length($1)}' testfile.txt
+awk '/xm/ {print index($1, "m")}' testfile.txt
+----------------------------------------------------------------------------------------------------
+# 語句塊 BEGIN END
+awk 'BEGIN{print "開頭"} /xm/ {print $1} END{print "結尾"}' testfile.txt
+awk 'BEGIN{print "姓名"} {if(NR == 2) print $1}  END{print "找到第二列"}' testfile.txt
+awk 'BEGIN{print "姓名"} NR==2 {print $1} END{print "找到第二列"}' testfile.txt
+
+awk \
+' \
+BEGIN{printf "%2s %2s %2s %2s\n", "姓名", "國文", "英文", "數學"} \
+{printf "%-4s %-4d %-4d %-4d\n", $1, $2, $3, $4} \
+END{printf "%3s:%d%s", "一共有", NR, "行"} \
+' \
+testfile.txt
+----------------------------------------------------------------------------------------------------
+awk -f awk.sh testfile.txt
+
+vi awk.sh
+
+BEGIN {
+    print "----------BEGIN-AWK------------"
+    printf "%2s %2s %2s %2s %2s\n", "姓名", "國文", "數學", "英文", "總分"
+}
+
+{
+    max=0
+    total=0
+    i=2
+    while(i<=NF) {
+        total+=$i
+        i++
+    }
+    printf "%-4s %-4d %-4d %-4d %-4d\n", $1, $2, $3, $4, total
+    if(total > max) {
+        max=total
+    }
+}
+
+END {
+    printf "最高分是:%-4d\n", max
+    print "----------END---AWK------------"
+}
+----------------------------------------------------------------------------------------------------
