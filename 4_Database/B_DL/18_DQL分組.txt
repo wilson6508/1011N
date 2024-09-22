@@ -2,11 +2,15 @@ select col_name from table_name where c1 group by col_name having c2
 
 where c1 過濾 > group by col_name 分組 > 聚合函數 > having c2 過濾
 where 不能用聚合函數 having可以
-------------------------------------------------------------------------------------------------
-select gender, count(*) from emp group by gender;
-select gender, avg(age) from emp group by gender;
-select workaddress, count(*) from emp where age < 30 group by workaddress having count(*) >= 3;
-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+select gender, count(*) as '數量' from emp group by gender;
+select gender, avg(age) as '平均年齡' from emp group by gender;
+
+select workaddress, count(*) from emp where age < 45 group by workaddress;
+select workaddress, count(*) as address_count from emp where age < 45 group by workaddress having address_count > 3;
+select workaddress from emp where age < 45 group by workaddress having count(*) > 3;
+-------------------------------------------------------------------------------------------------------------------------
 使用group by的查詢欄位: 一般為聚合函數及分組欄位 (查詢其它欄位無意義)
 
 GROUP BY X, Y: 將所有具有相同X欄位值和Y欄位值的記錄放到一個分組裡
+-------------------------------------------------------------------------------------------------------------------------

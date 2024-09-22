@@ -1,3 +1,10 @@
+select count(*) from emp;
+select count(idcard) from emp;
+select avg(age) from emp;
+select max(age) from emp;
+select min(age) from emp;
+select sum(age) from emp where workaddress = '西安';
+----------------------------------------------------------------------------------------------
 將1列數據作為1個整體 進行縱向計算
 null不參與計算
 ----------------------------------------------------------------------------------------------

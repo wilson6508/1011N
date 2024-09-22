@@ -1,8 +1,27 @@
-select distinct workaddress as '地址' from emp;
+select workaddress as '工作地點' from emp;
+select workaddress '工作地點' from emp;
+select distinct workaddress '工作地點' from emp;
+
+select * from emp where age = 88;
+select * from emp where age <> 88;
+select * from emp where age != 88;
+select * from emp where age < 20;
+select * from emp where age <= 20;
 
 select * from emp where idcard is null;
 select * from emp where idcard is not null;
 
+select * from emp where age >= 15 && age <= 20;
+select * from emp where age >= 15 and age <= 20;
+select * from emp where age between 15 and 20;
+select * from emp where age between 20 and 15; -- 查不到數據
+
+select * from emp where gender = '女' and age < 25;
+select * from emp where age in (18,20,40);
+
+select * from emp where name like '__';
+select * from emp where idcard like '%X';
+----------------------------------------------------------------------------------
 like (_匹配單個字符, %匹配任意字符)
 select * from emp where name like '__';
 select * from emp where name like '___';
@@ -15,3 +34,4 @@ select * from emp where name like '%\%%';
 AND &&
 OR ||
 NOT !
+----------------------------------------------------------------------------------
