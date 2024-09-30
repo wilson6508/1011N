@@ -5,6 +5,20 @@ do
 done
 
 #!/bin/bash
+# while read -r row; do echo "${row}_5566"; done < test.txt
+while read -r row
+do
+  echo "${row}_5566"
+done < test.txt
+
+counter=1
+while read -r line; do
+  echo "${line}${counter}"
+  counter=$((counter + 1))
+done < test.txt
+
+
+#!/bin/bash
 while IFS= read -r fileName
 do
   echo "$fileName"

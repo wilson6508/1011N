@@ -27,3 +27,10 @@ crontab -l
 echo "hello, world" >> /home/hello/logs/$(date +%Y%m%d).log
 
 */1 * * * * echo "hello, world" >> /home/hello/logs/$(date '+\%Y\%m\%d').log
+--------------------------------------------------------------------------------
+# 把crontab倒出來
+crontab -l > back.txt
+
+# 把crontab倒回去
+crontab back.txt
+--------------------------------------------------------------------------------

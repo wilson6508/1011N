@@ -20,3 +20,30 @@ find . -mmin -1
 
 找1天以內修改過的檔案
 find . -mtime -1
+----------------------------------------------------------------------------------------------------------------------------
+find /root/atguigu -type f -mtime -2 -exec ls -l {} \;
+
+-type f
+This option tells find to look for files only
+(as opposed to directories or other types of file system objects).
+
+-mtime -2
+This option specifies the modification time of the files.
+The -2 means "modified in the last 2 days."
+So, it finds files that have been modified in the last 48 hours.
+
+-exec ls -l {}
+This part of the command specifies an action to perform on the files that find has located.
+-exec allows you to execute a command on each found item.
+
+ls -l {}
+This command lists the details of each file in a long format
+(including permissions, owner, size, and modification date).
+The {} is a placeholder that find replaces with the name of the found file.
+
+\;
+This indicates the end of the -exec command.
+The backslash is used to escape the semicolon
+so that the shell doesn’t interpret it as the end of the command.
+https://superuser.com/questions/638375/what-does-mean-in-find-in-linux
+----------------------------------------------------------------------------------------------------------------------------
