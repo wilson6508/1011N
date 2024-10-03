@@ -1,19 +1,28 @@
-create procedure p6(in season int)
+create procedure p6(in month int)
 begin
-    declare result varchar(10);
+    declare result varchar(2);
     case
-        when season >= 1 and season <= 3 then
-            set result := '第1季';
-        when season >= 4 and season <= 6 then
-            set result := '第2季';
-        when season >= 7 and season <= 9 then
-            set result := '第3季';
-        when season >= 10 and season <= 12 then
-            set result := '第4季';
+        when month >= 1 and month <= 3 then
+            set result = 'Q1';
+        when month >= 4 and month <=6 then
+            set result = 'Q2';
+        when month >= 7 and month <= 9 then
+            set result = 'Q3';
+        when month >= 10 and month <= 12 then
+            set result = 'Q4';
         else
-            set result := '無效參數';
+            set result = 'FK';
     end case;
-    select concat('參數', season, '是', result);
+    select concat('參數', month, '是', result);
 end;
+===============================================================================================
 
 call p6(112);
+
++----------------------------------------+
+| concat('參數', month, '是', result)    |
++----------------------------------------+
+| 參數112是FK                            |
++----------------------------------------+
+
+===============================================================================================

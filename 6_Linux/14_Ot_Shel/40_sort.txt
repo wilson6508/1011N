@@ -14,7 +14,10 @@ cat /etc/passwd | tail | sort -t ":" -k 3 -n
 ls -lh | sort -k 5 -h
 
 # 將排序結果保存到指定文件
-ls -lh | sort -k 5 -h -o log.sh
+ls -lh | sort -k 5 -h -o test.txt
+
+# 把文件內容排序 (空白row默認最小)
+sort test.txt
 
 # 去重複
 sort -u test.txt

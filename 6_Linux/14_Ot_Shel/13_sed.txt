@@ -84,4 +84,8 @@ sed -e '1,3d' test.txt
 idx1=1; idx3=3; sed -i "${idx},${idx3}d" test.txt
 idx3=3; action=a; str="a new line"; sed -e "${idx3}${action}${str}" test.txt
 idx3=3; action=a; str="a new line"; sed -e "${idx3}${action}\\${str}" test.txt
+
+# 刪除空白row
+sed -e "/^$/d" test.txt
+sed -i "/^$/d" test.txt
 ===============================================================================
