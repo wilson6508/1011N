@@ -1,0 +1,17 @@
+[]
+前後要有空格
+變量前後要有雙引號
+
+[ -f "${file1}" ] && echo OK || echo NO
+OK
+rm hello.txt
+[ -f "${file1}" ] && echo OK || echo NO
+NO
+
+# 先確認有查看檔案的權限 再查看檔案
+chmod 000 test.txt
+[ -r test.txt ] && cat test.txt || echo "Permission denied"
+[ -w test.txt ] && echo "123" > test.txt || echo "Permission denied"
+chmod +r test.txt && chmod +w test.txt || echo error
+[ -w test.txt ] && echo "123" > test.txt || echo "Permission denied"
+[ -r test.txt ] && cat test.txt || echo "Permission denied"

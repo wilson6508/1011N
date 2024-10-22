@@ -1,0 +1,26 @@
+rm -r hello_dir
+
+test -e haha.txt && echo "哈哈文件已存在" || touch haha.txt
+[ -e haha.txt  ] && echo "哈哈文件已存在" || touch haha.txt
+
+expr length ""
+0
+expr length " "
+1
+
+-z 空字串為true
+test -z "" && echo empty || echo "not empty"
+empty
+test -z " " && echo empty || echo "not empty"
+not empty
+
+-n 字串非空為true
+test -n "" && echo "not empty" || echo empty
+empty
+test -n " " && echo "not empty" || echo empty
+not empty
+
+#!/bin/bash
+echo "start"
+mkdir hello # hello資料夾已存在 仍會往下執行
+echo "done"

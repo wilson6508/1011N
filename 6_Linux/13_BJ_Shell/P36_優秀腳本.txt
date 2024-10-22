@@ -1,0 +1,11 @@
+-o 是 or
+-a 是 and
+
+if [ $PPID -ne 1 -a -z "$PARA" ] && [ -d /run/systemd/system ]
+then
+   echo 123
+fi
+
+if [ ! -f /etc/sysconfig/network ]; then
+    exit 6
+fi

@@ -1,0 +1,30 @@
+﻿DNS對應
+cat /etc/hosts
+----------------------------------------------------------------------
+
+ping X.X.X.X
+
+PING X.X.X.X (X.X.X.X): 56 data bytes
+64 bytes from X.X.X.X: icmp_seq=0 ttl=61 time=1 ms
+64 bytes from X.X.X.X: icmp_seq=1 ttl=61 time=0 ms
+64 bytes from X.X.X.X: icmp_seq=2 ttl=61 time=0 ms
+64 bytes from X.X.X.X: icmp_seq=3 ttl=61 time=0 ms
+64 bytes from X.X.X.X: icmp_seq=4 ttl=61 time=0 ms
+
+--- X.X.X.X ping statistics ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 0/0/1 ms
+
+----------------------------------------------------------------------
+
+telnet X.X.X.X 8080
+
+Trying...
+Connected to X.X.X.X.
+Escape character is '^]'.
+
+----------------------------------------------------------------------
+
+curl -X POST -H "Content-Type: application/json" -d \
+'{"name": "Tom", "age": 18, "check": false }' \
+https://google.com.tw:8080/login/suffix

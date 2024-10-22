@@ -4,7 +4,19 @@
 # 倒數第一個以e開頭的命令
 !e
 
-# -e escape
+echo hello
+# 無換行
+echo -n hello
+
+echo $name
+echo "$name"
+# 輸出$name
+echo '$name'
+
+# 把\視為續行符
+echo \n
+
 echo "hello\nworld"
+# -e escape
 echo -e "hello\nworld"
 echo -e "hello\tworld"
