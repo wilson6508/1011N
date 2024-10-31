@@ -1,0 +1,9 @@
+ssh-keygen
+
+# 路徑輸入
+/d/RD3/Application08/HelloJava/.git/hooks/enter_key
+enter
+enter
+
+# 放公鑰
+ssh-copy-id -i /d/RD3/Application08/HelloJava/.git/hooks/enter_key.pub user@10.10.10.110

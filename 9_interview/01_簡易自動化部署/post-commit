@@ -1,0 +1,17 @@
+#!/bin/bash
+
+base_dir="/d/RD3/Application08/HelloJava"
+key_path="$base_dir/.git/hooks/enter_key"
+jar_path="$base_dir/target/demo-0.0.1-SNAPSHOT.jar"
+
+server_info="user@10.10.10.110"
+target_dir="/home/user/java_project"
+
+# 在本機打包
+mvn clean package -Dmaven.test.skip=true
+
+# 傳送jar檔到指定伺服器
+scp -i "$key_path" "$jar_path" "$server_info:$target_dir"
+
+# 執行伺服器上的腳本
+ssh -i "$key_path" "$server_info" "cd $target_dir; ./deployment.sh"

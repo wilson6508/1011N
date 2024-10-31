@@ -1,0 +1,19 @@
+envsubst 用於將 stdin 中的變量占位符
+替換為bash變量的值 並輸入到stdout
+
+echo 'my name is ${USER}, directory is ${HOME}.' | envsubst | cat
+echo 'my name is $USER,   directory is $HOME.'   | envsubst | cat
+my name is root, directory is /root
+
+指定要替換的變量
+echo 'my name is $USER, directory is $HOME.' | envsubst '$USER' | cat
+my name is root, directory is $HOME
+
+指定要替換的變量
+echo 'my name is $USER, directory is $HOME.' | envsubst '$USER $HOME' | cat
+my name is root, directory is /root
+
+常見用法
+test.template的內容 my name is $USER, directory is $HOME.
+cat test.template | envsubst '$USER $HOME' > a.txt
+envsubst '$USER $HOME' < test.template > a.txt
