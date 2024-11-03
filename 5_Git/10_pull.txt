@@ -1,0 +1,13 @@
+git pull = git fetch + git merge
+
+我 A --> B (未推送遠端)
+他 A --> C (已推送遠端)
+
+此時我不能推送到遠端 要先執行git pull
+會變成下方 D是merge commit
+A --> B -- D
+|---> C ---|
+
+上述方法並不好 使用
+git pull --rebase
+會變成 A --> C --> B

@@ -1,0 +1,25 @@
+= != -eq -ne -lt -le -gt -ge
+[ $a = hello ]
+[ $a != hello ]
+[ 2 -eq 8 ]
+--------------------------------------------------------------
+[ -r fileName ] # read
+[ -w fileName ] # write
+[ -x fileName ] # execute
+[ -e fileName ] # existence
+[ -f fileName ] # file
+[ -d fileName ] # directory
+test -f abc.txt
+--------------------------------------------------------------
+str=hello
+
+echo $? 是 0
+[ abc ]
+[ ! -z $str ]
+test $str = hello
+
+echo $? 是 1
+[ ]
+[ -z $str ]
+test $str = hello123
+--------------------------------------------------------------
