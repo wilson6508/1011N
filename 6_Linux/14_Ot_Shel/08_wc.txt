@@ -15,3 +15,13 @@ wc -c test.txt
 # 字符數
 wc -m test.txt
 -----------------------------------
+wc -l a.txt
+5 a.txt
+
+wc -l < a.txt
+5
+
+xargs 沒有用到
+wc -l < a.txt | xargs
+5
+-----------------------------------

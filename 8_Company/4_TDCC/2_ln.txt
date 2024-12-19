@@ -1,0 +1,21 @@
+因為DB升級
+driver要從db2jcc.jar改為db2jcc4.jar
+但是有些程式是寫 java -cp db2jcc.jar
+所以刪掉原本的db2jcc.jar
+ln -s db2jcc4.jar db2jcc.jar
+
+
+下方是自行測試
+ln -s /itrades/sqllib/java/db2jcc4.jar /home/tradeap2/test20241219.jar
+
+cd /home/tradeap2/bat
+vi d_batDRDP170_B2C.sh
+java -mx512m -cp /home/tradeap2/test20241219.jar:/$dbInstance/sqllib/java/db2java.zip:/$dbInstance/sqllib/java/db2jcc.jar:/$dbInstance/sqllib/java/db2jcc_license_cu.jar:$BAT_PATH/filercv/lib/log4j-1.2.11.jar:$BAT_PATH/filercv/lib/commons-lang-2.0.jar:$BAT_PATH/. filercv.DRDP170Servlet_B2C $p
+
+vi d_batDRDP170.sh
+# . $TRADEBAT/d_batDRDP170.sh
+./d_bDRDP170.sh
+------------------------------------------------------------------------------
+vi非編輯模式按x
+硬鏈接指向的是資料
+軟鏈接指向的是檔案
