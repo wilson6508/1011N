@@ -1,0 +1,13 @@
+絕對參照: 先在公式列選取 再按F4
+
+Lookup_value: key
+Table_array: 整張資料表(第1行是要找尋的key)
+Col_index_num: 回傳的行數(從1開始)
+Range_lookup: 模糊比對(布林)
+
+開啟模糊比對key 資料表第1行必須是遞增
+
+Lookup_value: C3
+Table_array: M3:N7
+Col_index_num: 2
+Range_lookup: FALSE
