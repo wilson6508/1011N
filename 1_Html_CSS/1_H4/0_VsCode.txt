@@ -4,6 +4,7 @@ https://www.bilibili.com/video/BV1p84y1P7Z5/?p=13
 Settings > wheel
 Settings > font
 Settings > auto
+Settings > compact > 不勾Compact Folders
 
 Themes
 

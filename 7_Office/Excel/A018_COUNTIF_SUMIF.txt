@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=QVIIiTMvj1w
+
 計算數字類儲存格的個數
 =COUNT(D2:D14)
 

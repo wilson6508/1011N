@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=gOASqU7wHkQ
+
 絕對參照: 先在公式列選取 再按F4
 
 Lookup_value: key

@@ -1,0 +1,15 @@
+LEFT(資料位置,抓取字數)
+=LEFT(B2,6)
+
+RIGHT(資料位置,抓取字數)
+=RIGHT(B2,9)
+
+MID(資料位置,開始idx,抓取字數)
+=MID(B2,7,5)
+
+FIND(要找的值,資料位置,開始idx)
+=FIND("y", B2)
+=FIND("y", B2,6)
+
+LEN(資料位置)
+=LEN(B2)
