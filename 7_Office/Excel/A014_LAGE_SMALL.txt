@@ -1,0 +1,8 @@
+=MAX(C1:C5)
+=MIN(C1:C5)
+
+LARGE(array,順位)
+=LARGE(C1:C5,2)
+=SMALL(C1:C5,2)
+
+插入函數使用
