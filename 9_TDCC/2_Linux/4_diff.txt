@@ -1,0 +1,5 @@
+Linux unix
+cat a.txt | diff - b.txt
+
+linux
+diff -y a.txt b.txt

@@ -25,6 +25,10 @@ Escape character is '^]'.
 
 ----------------------------------------------------------------------
 
-curl -X POST -H "Content-Type: application/json" -d \
-'{"name": "Tom", "age": 18, "check": false }' \
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer XXX" \
+-d '{"name": "Tom", "age": 18, "check": false}' \
 https://google.com.tw:8080/login/suffix
+
+----------------------------------------------------------------------

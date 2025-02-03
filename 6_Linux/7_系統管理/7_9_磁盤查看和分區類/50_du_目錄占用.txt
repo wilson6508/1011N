@@ -1,0 +1,48 @@
+https://www.youtube.com/watch?v=YLV3cmZohEQ
+安裝tree (未安裝)
+
+du (disk usage) : 文件和目錄占用的磁盤空間
+
+h: human readable
+a: 子目錄 + 文件
+s: 只顯示總和
+
+du
+du -ah
+
+當前目錄的大小
+du -sh 
+
+根目錄大小
+du -sh /
+
+只顯示一層 最常用
+du --max-depth=1 -ah
+------------------------------------------------------------------------------------------------------------------------
+unix
+
+du [-a | -s] [-rlkmgx] [ -H | -L ] [Name ...]
+------------------------------------------------------------------------------------------------------------------------
+-a
+This option means display the disk usage
+of all files (not just directories).
+
+-s
+This option means summarize the total disk usage of a directory,
+rather than listing usage for each file and subdirectory.
+------------------------------------------------------------------------------------------------------------------------
+-r: Recursively count disk usage (this is typically the default behavior).
+-l: Limit the depth of recursion (i.e., how many levels deep du will go into
+subdirectories).
+-k: Show disk usage in kilobytes (KB) (this is the default unit on most systems if you don't specify a unit).
+-m: Show disk usage in megabytes (MB).
+-g: Show disk usage in gigabytes (GB).
+------------------------------------------------------------------------------------------------------------------------
+略
+------------------------------------------------------------------------------------------------------------------------
+This part refers to the names of directories or files
+you want to calculate disk usage for.
+If omitted, du will use the current directory (./) by default.
+------------------------------------------------------------------------------------------------------------------------
+du -a -l 1 .
+------------------------------------------------------------------------------------------------------------------------

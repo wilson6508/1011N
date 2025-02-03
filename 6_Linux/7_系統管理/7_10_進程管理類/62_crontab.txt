@@ -1,5 +1,8 @@
 https://www.youtube.com/watch?v=aziQ_1zWi6Q
 --------------------------------------------------------------
+查看process
+systemctl status crond
+
 列舉當前用戶所有定時任務
 crontab -l
 
@@ -8,29 +11,28 @@ crontab -e
 
 移除當前用戶所有定時任務
 crontab -r
---------------------------------------------------------------------------------
-systemctl status crond
-crontab -l
-crontab -e
 
+把crontab倒出來
+crontab -l > back.txt
+
+比對
+crontab -l | diff - back.txt
+
+把crontab倒回去
+crontab back.txt
+--------------------------------------------------------------------------------
+*/1 * * * * /root/daily_archive.sh /root/scripts
+
+minute       (0 - 59)
+hour         (0 - 23)
+day of month (1 - 31)
+month        (1 - 12) 
+day of week  (0 - 7) (Sunday = 0 or 7)
+--------------------------------------------------------------------------------
 */1 * * * * echo "hello, world" >> /root/hello
 
-ls
-cat hello
-tail -f hello
-ctrl c
-crontab -l
-crontab -r
-crontab -l
---------------------------------------------------------------------------------
 一般指令
 echo "hello, world" >> /home/hello/logs/$(date +%Y%m%d).log
 
 */1 * * * * echo "hello, world" >> /home/hello/logs/$(date '+\%Y\%m\%d').log
---------------------------------------------------------------------------------
-# 把crontab倒出來
-crontab -l > back.txt
-
-# 把crontab倒回去
-crontab back.txt
 --------------------------------------------------------------------------------
