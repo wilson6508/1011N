@@ -1,0 +1,22 @@
+DNS解析: 把URL解析為ip
+    DNS就是資料庫
+
+TCP三次握手: 發送數據前 先建立通道
+    client -> server (發送SYN 請求連接)
+    server -> clinet (響應SYN+ACK 同意連接)
+    client -> server (發送ACK 成功連接)
+
+clinet端 發送HTTP請求
+    請求行 (url get post http協議)
+    請求的頭部 (瀏覽器資訊)
+    空行
+    請求數據
+
+server端 響應HTTP請求
+    狀態行 (404 200)
+    響應頭部 (contnet-type:text/html;charset=utf-8)
+    空行
+    響應數據
+
+頁面渲染
+    解析收到的HTML CSS JS        

@@ -1,0 +1,17 @@
+https://www.bilibili.com/video/BV1KY411t75D
+
+源Server 離用戶太遙遠
+
+有一群人於世界各地搭建Server
+Content Delivery Network
+用來幫 源Server 給近距離用戶分發網頁內容
+
+源Server利用http header的cache-control
+告訴CDN文件的緩存形式
+
+源Server 會先把靜態網頁 push 給CDN
+
+用戶無法直接訪問到源Server 要透過CDN
+因此DDOS攻擊到的是CDN
+
+CDN會幫忙壓縮文檔
